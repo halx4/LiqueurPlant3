@@ -76,7 +76,7 @@ public class SiloDevice {
 		PropertiesHandler props = null;
 
 		try {
-			props = new PropertiesHandler(propertiesFilename+".properties");
+			props = new PropertiesHandler("runConfigs" + File.separator + propertiesFilename + ".properties");
 		} catch (IOException e) {
 			System.err.println("ERROR: properties file: " + e.getMessage() + " NOT FOUND");
 			e.printStackTrace();
