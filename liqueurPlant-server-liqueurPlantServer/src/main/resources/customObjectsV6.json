@@ -1,0 +1,288 @@
+[
+  {
+    "name": "Silo",
+    "id": 16663,
+    "instancetype": "multiple",
+    "mandatory": true,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "state",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "name": "fill",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 2,
+        "name": "empty",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 3,
+        "name": "stop",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 4,
+        "name": "initialize",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      } ,
+	  {
+        "id": 5,
+        "name": "heat",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      } ,
+	  {
+        "id": 6,
+        "name": "mix",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 7,
+        "name": "filling completed",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 8,
+        "name": "emptying completed",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 9,
+        "name": "heating completed",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 10,
+        "name": "mixing completed",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 11,
+        "name": "target temperature",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "float",
+        "range": "",
+        "units": "",
+        "description": ""
+      }
+	  
+    ]
+  },
+  {
+    "name": "Valve",
+    "id": 16664,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 5850,
+        "name": "on/off",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Level Sensor",
+    "id": 16665,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 5751,
+        "name": "sensor type",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": false,
+        "type": "String",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 5550,
+        "name": "digital output state",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      } 
+    ]
+  },
+  {
+    "name": "Common Resource",
+    "id": 16666,
+    "instancetype": "multiple",
+    "mandatory": true,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 0,
+        "name": "owner",
+        "operations": "R",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "string",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+      {
+        "id": 1,
+        "name": "acquire",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+	  {
+        "id": 2,
+        "name": "empty",
+        "operations": "E",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      } 
+    ]
+  },
+  {
+    "name": "Mixer",
+    "id": 16667,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+	  {
+        "id": 0,
+        "name": "time to operate",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "integer",
+        "range": "",
+        "units": "",
+        "description": ""
+      },
+      {
+        "id": 5850,
+        "name": "on/off",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Heater",
+    "id": 16668,
+    "instancetype": "multiple",
+    "mandatory": false,
+    "description": "",
+    "resourcedefs": [
+      {
+        "id": 5850,
+        "name": "on/off",
+        "operations": "RW",
+        "instancetype": "single",
+        "mandatory": true,
+        "type": "boolean",
+        "range": "",
+        "units": "",
+        "description": ""
+      }
+    ]
+  }
+]
