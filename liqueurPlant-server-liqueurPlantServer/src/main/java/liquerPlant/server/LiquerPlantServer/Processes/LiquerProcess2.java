@@ -56,22 +56,22 @@ public class LiquerProcess2 extends LiquerPlantThread {
 					//make the new thread
 					subprocess=new SubProcess(getProcessID());
 					subprocess.start();
-					System.out.println("P"+id+" MARK 5");
-					monitor.waitForPower(id);
-					
-					monitor.sendSiloOutMix();
-					monitor.initializeMix();
-					System.out.println("P"+id+" MARK 6");
-					
-					//monitor.waitForMix();
-					monitor.waitForSiloOutMixingCompleted();
-					
-					monitor.sendReleasePower(id);
-					monitor.sendSiloOutEmpty();
-					System.out.println("P"+id+" MARK 7");
-					
-					//monitor.waitForSiloOutState(SmartSiloState.EMPTY);
-					monitor.waitForSiloOutEmptyingCompleted();
+						System.out.println("P"+id+" MARK 5");
+						monitor.waitForPower(id);
+						
+						monitor.sendSiloOutMix();
+						monitor.initializeMix();
+						System.out.println("P"+id+" MARK 6");
+						
+						//monitor.waitForMix();
+						monitor.waitForSiloOutMixingCompleted();
+						
+						monitor.sendReleasePower(id);
+						monitor.sendSiloOutEmpty();
+						System.out.println("P"+id+" MARK 7");
+						
+						//monitor.waitForSiloOutState(SmartSiloState.EMPTY);
+						monitor.waitForSiloOutEmptyingCompleted();
 					
 					try {
 						subprocess.join();
@@ -89,9 +89,6 @@ public class LiquerProcess2 extends LiquerPlantThread {
 	
 	}//end run
 		
-		
-		
-	
 	class SubProcess extends LiquerPlantThread{
 
 		

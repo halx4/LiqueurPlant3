@@ -71,15 +71,17 @@ public class ObservationCreator {
 		
 		
 	}
+	
 	//-------------------------------
 	private Client getClientByIdentifier(String endpoint){
 				return server.getClientRegistry().get(endpoint);
 	}
 	
+	//-------------------------------
 	private boolean observationMatches(Observation observation,int objectID,int instanceID,int resourceID){
-		if(	observation.getPath().getObjectId() == objectID &&
+		if(	observation.getPath().getObjectId() 		== objectID &&
 			observation.getPath().getObjectInstanceId() == instanceID &&
-			observation.getPath().getResourceId() == resourceID){
+			observation.getPath().getResourceId() 		== resourceID){
 				return true;
 		}
 		else return false;
