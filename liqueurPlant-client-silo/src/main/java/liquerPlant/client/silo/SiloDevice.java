@@ -23,8 +23,8 @@ import liquerPlant.client.siloDriverCodesys.SiloCodesysDriver;
 import liquerPlant.client.siloDriverHardware.SiloHardwareDriver;
 import liquerPlant.client.siloSimulator.SiloParameters;
 import liquerPlant.client.siloSimulator.SiloSimulatorDriver;
-import liquerPlant.core.PropertiesHandler;
 import liquerPlant.core.SiloDriverInterface;
+import liquerPlant.utilities.PropertiesHandler;
 
 import org.eclipse.leshan.ResponseCode;
 import org.eclipse.leshan.client.californium.LeshanClient;

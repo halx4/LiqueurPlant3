@@ -8,8 +8,8 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import liquerPlant.server.LiquerPlantServer.TestServerGeneral;
+import liquerPlant.utilities.ExitHandler;
 
 @SuppressWarnings("serial")
 public class ControlPanel extends Frame {
@@ -44,10 +44,12 @@ public class ControlPanel extends Frame {
 		this.setLayout(null);
 		this.setFont(new Font("TimesRoman", Font.PLAIN, 14));
 		this.setBackground(new Color(112, 135, 159));
-		setBounds(50, 50, 300, 300 + buttonsNo * 30);
-
 		this.toFront();
 		this.setResizable(true);
+		this.addWindowListener(new ExitHandler()); 
+		setBounds(50, 50, 300, 300 + buttonsNo * 30);
+
+
 
 		int ySize1 = 25;
 		int ySize2 = 25;
@@ -124,5 +126,6 @@ public class ControlPanel extends Frame {
 		}
 
 	}
+
 
 }

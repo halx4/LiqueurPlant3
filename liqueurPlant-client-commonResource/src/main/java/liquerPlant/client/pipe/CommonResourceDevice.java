@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import liquerPlant.client.core.MyInstanceEnablerFactory;
-import liquerPlant.core.PropertiesHandler;
+import liquerPlant.utilities.PropertiesHandler;
 
 import org.eclipse.leshan.ResponseCode;
 import org.eclipse.leshan.client.californium.LeshanClient;

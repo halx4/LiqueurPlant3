@@ -12,6 +12,8 @@ import liquerPlant.core.HeaterState;
 import liquerPlant.core.LevelSensorOutputState;
 import liquerPlant.core.MixerState;
 import liquerPlant.core.ValveState;
+import liquerPlant.utilities.ExitHandler;
+
 
 @SuppressWarnings("serial")
 public class SiloSimulatorGui extends Frame {
@@ -42,6 +44,7 @@ public class SiloSimulatorGui extends Frame {
 		this.setTitle(name);
 		this.setLayout(null);
 		this.setFont(new Font("TimesRoman", Font.PLAIN, 14));
+		this.addWindowListener(new ExitHandler()); 
 		this.setBackground(new Color(255, 204, 153));
 		setBounds(800,100,200,200);
 

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 
 import liquerPlant.core.LwM2mResourceParser;
-import liquerPlant.core.PropertiesHandler;
 import liquerPlant.core.ValveState;
 import liquerPlant.server.LiquerPlantServer.Gui.ControlPanel;
 import liquerPlant.server.LiquerPlantServer.Processes.LiquerProcess1;
@@ -14,6 +13,7 @@ import liquerPlant.server.LiquerPlantServer.monitors.Process1Monitor;
 import liquerPlant.server.LiquerPlantServer.monitors.Process2Monitor;
 import liquerPlant.server.core.CustomModelProvider;
 import liquerPlant.server.core.ObservationCreator;
+import liquerPlant.utilities.PropertiesHandler;
 
 import org.eclipse.leshan.core.request.DiscoverRequest;
 import org.eclipse.leshan.core.request.ExecuteRequest;

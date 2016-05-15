@@ -10,6 +10,8 @@ import org.eclipse.leshan.client.resource.BaseInstanceEnabler;
 import org.eclipse.leshan.core.response.ExecuteResponse;
 import org.eclipse.leshan.core.response.ReadResponse;
 
+import liquerPlant.utilities.ExitHandler;
+
 
 public class CommonResourceInstanceEnabler extends BaseInstanceEnabler{
 		private CommonResource commonResource;
@@ -127,6 +129,7 @@ public class CommonResourceInstanceEnabler extends BaseInstanceEnabler{
 					this.setTitle(name);
 					this.setLayout(null);
 					this.setFont(new Font("TimesRoman", Font.PLAIN, 14));
+					this.addWindowListener(new ExitHandler()); 
 					this.setBackground(new Color(192,192,192));
 					setBounds(1200,500,270,170);
 
