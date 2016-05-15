@@ -1,7 +1,11 @@
 package liquerPlant.server.LiquerPlantServer;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.InetSocketAddress;
+
 import liquerPlant.core.LwM2mResourceParser;
+import liquerPlant.core.PropertiesHandler;
 import liquerPlant.core.ValveState;
 import liquerPlant.server.LiquerPlantServer.Gui.ControlPanel;
 import liquerPlant.server.LiquerPlantServer.Processes.LiquerProcess1;
@@ -20,6 +24,8 @@ import org.eclipse.leshan.server.californium.impl.LeshanServer;
 import org.eclipse.leshan.server.client.Client;
 import org.eclipse.leshan.server.client.ClientRegistry;
 
+import com.sun.javafx.fxml.PropertyNotFoundException;
+
 public class LiquerPlantServer {
 
 	private LeshanServer server;
@@ -28,20 +34,48 @@ public class LiquerPlantServer {
 	private Process2Monitor siloMon2;
 
 	public static void main(String[] args) { //// args={serverIdentifier
-											 //// serverIP serverPort }
+												//// serverIP serverPort }
+		if (args.length == 0) {
+			System.out.println("check arguments!");
 
-		new LiquerPlantServer(args);
+		} else {
+
+			new LiquerPlantServer(args[0]);
+		}
 
 	}
 
 	// -------------------------------------------
-	public LiquerPlantServer(String[] args) {
-		
+	public LiquerPlantServer(String propertiesFilename) {
+
+		PropertiesHandler props = null;
+
+		try {
+			props = new PropertiesHandler("runConfigs" + File.separator + propertiesFilename + ".properties");
+		} catch (IOException e) {
+			System.err.println("ERROR: properties file: " + e.getMessage() + " NOT FOUND");
+			e.printStackTrace();
+		}
+
 		new ControlPanel(this);
-		Integer.parseInt(args[0]);
+
+		String serverID = null;
+		String serverIP = null;
+		String serverPort = null;
+
+		try {
+
+			serverID = props.getProperty("serverID");
+			serverIP = props.getProperty("serverIP");
+			serverPort = props.getProperty("serverPort");
+
+		} catch (PropertyNotFoundException e) {
+			System.err.println("Properties Error...");
+			e.printStackTrace();
+		}
 
 		// port 5683
-		final InetSocketAddress serverAddress = new InetSocketAddress(args[1], Integer.parseInt(args[2]));
+		final InetSocketAddress serverAddress = new InetSocketAddress(serverIP, Integer.parseInt(serverPort));
 		// System.out.println(serverAddress.isUnresolved());
 		LeshanServerBuilder serverBuilder = new LeshanServerBuilder();
 		serverBuilder.setLocalAddress(serverAddress);
@@ -59,7 +93,7 @@ public class LiquerPlantServer {
 
 	// -------------------------------------------
 	public void actionRequestFromControlPanel(String i) {
-		//System.out.println("function1-" + i);
+		// System.out.println("function1-" + i);
 		Client client;
 		LwM2mResponse response;
 
