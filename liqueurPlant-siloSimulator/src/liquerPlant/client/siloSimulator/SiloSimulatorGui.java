@@ -43,7 +43,7 @@ public class SiloSimulatorGui extends Frame {
 		this.setLayout(null);
 		this.setFont(new Font("TimesRoman", Font.PLAIN, 14));
 		this.setBackground(new Color(255, 204, 153));
-		setBounds(800,100,190,200);
+		setBounds(800,100,200,200);
 
 		this.toFront();
 		this.setResizable(true);
