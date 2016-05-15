@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiquerPlantServer.monitors;
+package liqueurPlant.server.LiqueurPlantServer.monitors;
 
 import org.eclipse.leshan.core.node.LwM2mNode;
 import org.eclipse.leshan.core.observation.Observation;
@@ -11,10 +11,10 @@ import liqueurPlant.core.MixerState;
 import liqueurPlant.core.SmartSiloState;
 
 
-public class Process1Monitor extends  ProcessMonitorAbstract{
+public class Process2Monitor extends  ProcessMonitorAbstract{
 	
 	
-	public Process1Monitor(int monitorID, LeshanServer server,
+	public Process2Monitor(int monitorID, LeshanServer server,
 			Client siloInClient, Client siloOutClient, Client pipeClient,
 			Client powerClient) {
 		super(monitorID, server, siloInClient, siloOutClient, pipeClient, powerClient);
@@ -34,8 +34,6 @@ public class Process1Monitor extends  ProcessMonitorAbstract{
 			if(siloOutState==SmartSiloState.FULL)transferComplete=true;
 		}
 		
-		
-		
 		else if(observationMatches(observation,siloInClient,16663,0,7)){//silo in filling completed
 			setSiloInFillingCompleted(Boolean.parseBoolean(val));
 		}
@@ -49,11 +47,9 @@ public class Process1Monitor extends  ProcessMonitorAbstract{
 		}
 		else if(observationMatches(observation,siloOutClient,16663,0,8)){//silo Out emptying completed
 			setSiloOutEmptyingCompleted(Boolean.parseBoolean(val));
-			//transferComplete=true;
-			//@ above line : RIP nasty bug!
 		}
-		else if(observationMatches(observation,siloOutClient,16663,0,9)){//silo Out heating completed
-			setSiloOutHeatingCompleted(Boolean.parseBoolean(val));
+		else if(observationMatches(observation,siloInClient,16663,0,9)){//silo in heating completed
+			setSiloInHeatingCompleted(Boolean.parseBoolean(val));
 		}
 		else if(observationMatches(observation,siloOutClient,16663,0,10)){//silo Out mixing completed
 			setSiloOutMixingCompleted(Boolean.parseBoolean(val));
@@ -70,7 +66,7 @@ public class Process1Monitor extends  ProcessMonitorAbstract{
 			mixerState=MixerState.boolean2MixerState(Boolean.parseBoolean(val));
 			if(mixerState==MixerState.state.NOTMIXING)mixComplete=true;
 		}
-		else if(observationMatches(observation,siloOutClient,16668,0,5850)){//silo Out Heater state
+		else if(observationMatches(observation,siloInClient,16668,0,5850)){//silo Out Heater state  //Here is the  difference with Process1Monitor (siloInclient instead of siloOutclient)
 			System.out.println("                                  HEATER STATE - >"+val);
 			heaterState=HeaterState.boolean2HeaterState(Boolean.parseBoolean(val)); 
 			if(heaterState==HeaterState.state.NOTHEATING)heatComplete=true;

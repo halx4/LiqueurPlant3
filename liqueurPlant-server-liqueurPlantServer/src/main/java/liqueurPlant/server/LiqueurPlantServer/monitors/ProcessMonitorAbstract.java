@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiquerPlantServer.monitors;
+package liqueurPlant.server.LiqueurPlantServer.monitors;
 
 import org.eclipse.leshan.core.node.LwM2mNode;
 import org.eclipse.leshan.core.observation.Observation;

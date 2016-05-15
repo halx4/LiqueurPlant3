@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiquerPlantServer.Gui;
+package liqueurPlant.server.LiqueurPlantServer.Gui;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -7,7 +7,7 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import liqueurPlant.server.LiquerPlantServer.LiquerPlantServer;
+import liqueurPlant.server.LiqueurPlantServer.LiquerPlantServer;
 import liqueurPlant.utilities.ExitHandler;
 
 @SuppressWarnings("serial")

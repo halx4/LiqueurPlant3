@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiquerPlantServer.Processes;
+package liqueurPlant.server.LiqueurPlantServer.Processes;
 
 public class LiquerPlantThread extends Thread {
 	private int processID;
