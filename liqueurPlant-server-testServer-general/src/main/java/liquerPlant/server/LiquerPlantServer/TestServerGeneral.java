@@ -26,7 +26,7 @@ import org.eclipse.leshan.server.client.ClientRegistry;
 
 import com.sun.javafx.fxml.PropertyNotFoundException;
 
-public class LiquerPlantServer {
+public class TestServerGeneral {
 
 	private LeshanServer server;
 	private ObservationCreator observationCreator;
@@ -40,13 +40,13 @@ public class LiquerPlantServer {
 
 		} else {
 
-			new LiquerPlantServer(args[0]);
+			new TestServerGeneral(args[0]);
 		}
 
 	}
 
 	// -------------------------------------------
-	public LiquerPlantServer(String propertiesFilename) {
+	public TestServerGeneral(String propertiesFilename) {
 
 		PropertiesHandler props = null;
 
@@ -92,12 +92,47 @@ public class LiquerPlantServer {
 	}
 
 	// -------------------------------------------
-	public void actionRequestFromControlPanel(String i) {
-		// System.out.println("function1-" + i);
+	public void actionRequestFromControlPanel(String command, String clientStr, String objID, String objInstanceID,
+			String resourceID, String Value) {
+
 		Client client;
 		LwM2mResponse response;
 
-		switch (i) {
+		switch (command) {
+		case "READ":
+
+			client = getClientByIdentifier(clientStr);
+			if (client != null) {
+				System.out.println("Sending READ request to client: " + clientStr + " on /" + Integer.parseInt(objID)
+						+ "/" + Integer.parseInt(objInstanceID) + "/" + Integer.parseInt(resourceID) + " ...");
+				response = server.send(client, new ReadRequest(Integer.parseInt(objID), Integer.parseInt(objInstanceID),
+						Integer.parseInt(resourceID)));
+				System.out.println("    responseCode= " + response.getCode().toString() + " |  responsePayload= "
+						+ LwM2mResourceParser.valueOf(response));
+			} else {
+				System.out.println("not found registered client with endpoint name: " + clientStr);
+			}
+
+			break;
+		case "EXECUTE":
+
+			client = getClientByIdentifier(clientStr);
+			if (client != null) {
+				System.out.println("Sending EXECUTE request to client: " + clientStr + " on /" + Integer.parseInt(objID)
+						+ "/" + Integer.parseInt(objInstanceID) + "/" + Integer.parseInt(resourceID) + " ...");
+				response = server.send(client, new ExecuteRequest(Integer.parseInt(objID), Integer.parseInt(objInstanceID),
+						Integer.parseInt(resourceID)));
+				System.out.println("    responseCode= " + response.getCode().toString() + " |  responsePayload= "
+						+ LwM2mResourceParser.valueOf(response));
+			} else {
+				System.out.println("not found registered client with endpoint name: " + clientStr);
+			}
+
+			break;
+			
+			
+			
+			
 		case "fill S1":// execute fill
 			client = getClientByIdentifier("SILO-1");
 			response = server.send(client, new ExecuteRequest(16663, 0, 1));
