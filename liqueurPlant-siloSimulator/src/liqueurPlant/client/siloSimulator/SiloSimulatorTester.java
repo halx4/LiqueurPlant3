@@ -1,4 +1,4 @@
-package liquerPlant.client.siloDriverCodesys.test;
+package liqueurPlant.client.siloSimulator;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,35 +6,36 @@ import java.awt.Frame;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
-import liqueurPlant.client.siloDriverCodesys.SiloCodesysDriver;
+import liqueurPlant.client.siloSimulator.SiloParameters;
+import liqueurPlant.client.siloSimulator.SiloSimulatorDriver;
 import liqueurPlant.core.HeaterState;
 import liqueurPlant.core.MixerState;
 import liqueurPlant.core.SiloControllerInterface;
 import liqueurPlant.core.ValveState;
-import liqueurPlant.core.LevelSensorOutputState.state;
+
 
 @SuppressWarnings("serial")
-public class SiloCodesysDriverTester extends Frame implements SiloControllerInterface{
-	public static final String inPipe="cod2j";
-	public static final String outPipe="j2cod";
-	public static final int sendInterval=1000;
-	public static final int receiveInterval=200;
-	public static final int checkForChangesInterval=200;
-
-	private final int buttonsNo=11;
+public class SiloSimulatorTester extends Frame implements SiloControllerInterface {
+	private final int buttonsNo=10;
 	private ButtonWithID[] button=new ButtonWithID[buttonsNo];
 	private ButtonHandler buttonHandler;
-	private SiloCodesysDriver siloSimulator;
+	private SiloSimulatorDriver siloSimulator;
 	private Label observeLabel;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SiloSimulatorTester tester= new SiloSimulatorTester();
+		
+	}
 	
 	
-	public SiloCodesysDriverTester() {
+	public SiloSimulatorTester(){
 		buttonHandler=new ButtonHandler();
 		
-		siloSimulator = new SiloCodesysDriver(new File(inPipe),new File(outPipe),sendInterval,receiveInterval,checkForChangesInterval);
+		siloSimulator=new SiloSimulatorDriver(new SiloParameters(1,9,1000,true,true) , "Silo Tester");
 		siloSimulator.setController(this);
+		siloSimulator.initialize();
 		
 		this.setTitle("Silo simulator tester");
 		this.setLayout(null);
@@ -71,31 +72,14 @@ public class SiloCodesysDriverTester extends Frame implements SiloControllerInte
 			button[7].setLabel("setMixerOff");
 			button[8].setLabel("setHeaterOn");
 			button[9].setLabel("setHeaterOff");
-			button[10].setLabel("get Temperature");
 
 		// ---------------------------
 		this.setVisible(true); // ----Frame setVisible
 		// ---------------------------
 
-		
-		siloSimulator.begin();
-		
-	}
-
-	public static void main(String[] args) {
-		new SiloCodesysDriverTester();
-	}
-
-	@Override
-	public void lowLevelSensorOutputChanged(state newState) {
-		System.out.println("Low Level Changed to "+newState);
-	}
-
-	@Override
-	public void highLevelSensorOutputChanged(state newState) {
-		// TODO Auto-generated method stub
-		System.out.println("High Level Changed to "+newState);
-	}
+	}// end constructor
+	
+	
 	// ##########################################################
 	class ButtonHandler implements ActionListener {
 
@@ -134,8 +118,6 @@ public class SiloCodesysDriverTester extends Frame implements SiloControllerInte
 			case 9:
 				siloSimulator.setHeaterState(HeaterState.state.NOTHEATING);
 				break;
-			case 10:
-				System.out.println("Temperature="+siloSimulator.getTemperature().getValue());
 				
 			}
 
@@ -144,5 +126,18 @@ public class SiloCodesysDriverTester extends Frame implements SiloControllerInte
 	}
 
 
-	
+	@Override
+	public void lowLevelSensorOutputChanged(liqueurPlant.core.LevelSensorOutputState.state newState) {
+		System.out.println("lowLevelCallback:newState="+newState.toString());	
+		
+	}
+
+
+	@Override
+	public void highLevelSensorOutputChanged(liqueurPlant.core.LevelSensorOutputState.state newState) {
+		System.out.println("highLevelCallback:newState="+newState.toString());
+		
+	}
+
+
 }
