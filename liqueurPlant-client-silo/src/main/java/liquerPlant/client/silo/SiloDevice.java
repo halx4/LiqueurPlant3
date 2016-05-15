@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import liquerPlant.client.core.MyInstanceEnablerFactory;
-import liquerPlant.client.core.PropertiesHandler;
 import liquerPlant.client.silo.Enablers.HeaterInstanceEnabler;
 import liquerPlant.client.silo.Enablers.TemperatureInstanceEnabler;
 import liquerPlant.client.silo.Enablers.MixerInstanceEnabler;
@@ -24,9 +23,8 @@ import liquerPlant.client.siloDriverCodesys.SiloCodesysDriver;
 import liquerPlant.client.siloDriverHardware.SiloHardwareDriver;
 import liquerPlant.client.siloSimulator.SiloParameters;
 import liquerPlant.client.siloSimulator.SiloSimulatorDriver;
-
+import liquerPlant.core.PropertiesHandler;
 import liquerPlant.core.SiloDriverInterface;
-import liquerPlant.client.core.PropertiesHandler;
 
 import org.eclipse.leshan.ResponseCode;
 import org.eclipse.leshan.client.californium.LeshanClient;

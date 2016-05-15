@@ -1,4 +1,4 @@
-package liquerPlant.client.core;
+package liquerPlant.core;
 
 import java.io.File;
 import java.io.FileInputStream;
