@@ -1,4 +1,4 @@
-package liquerPlant.client.silo;
+package liquerPlant.client.core;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +14,7 @@ public class PropertiesHandler {
 
 	private String propertiesFilename;
 
-	PropertiesHandler(String filename) throws IOException  {
+	 public PropertiesHandler(String filename) throws IOException  {
 		this.propertiesFilename = filename;
 		loadProperties();
 	}
