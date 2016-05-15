@@ -13,7 +13,13 @@ import liquerPlant.server.LiquerPlantServer.TestServerGeneral;
 
 @SuppressWarnings("serial")
 public class ControlPanel extends Frame {
-	private final int buttonsNo = 5;
+	private final int buttonsNo = 6;
+	private final String CLIENT_DEFAULT_VALUE="SILO-1";
+	private final String OBJECT_ID_DEFAULT_VALUE="16663";
+	private final String OBJECT_INSTANCE_ID_DEFAULT_VALUE="0";
+	private final String RESOURCE_ID_DEFAULT_VALUE="1";
+	
+	
 	private TestServerGeneral server;
 	private Button[] button = new Button[buttonsNo];
 	private ButtonHandler buttonHandler;
@@ -47,14 +53,14 @@ public class ControlPanel extends Frame {
 		int ySize2 = 25;
 		int xSize1 = 70;
 		int xSize2 = 150;
-		int xPos1 = 30;
-		int xPos2 = 120;
+		int xPos1  = 30;
+		int xPos2  = 120;
 
-		this.add(clientL);
-		this.add(objIDL);
-		this.add(objInstanceIDL);
-		this.add(resourceL);
-		this.add(valueL);
+		this.add(clientL		);
+		this.add(objIDL			);
+		this.add(objInstanceIDL	);
+		this.add(resourceL		);
+		this.add(valueL			);
 
 		clientL			.setBounds(xPos1, 60 + 0 * 30, xSize1, ySize1);
 		objIDL			.setBounds(xPos1, 60 + 1 * 30, xSize1, ySize1);
@@ -63,17 +69,23 @@ public class ControlPanel extends Frame {
 		valueL			.setBounds(xPos1, 60 + 4 * 30, xSize1, ySize1);
 
 		
-		this.add(clientTF);
-		this.add(objIDTF);
+		this.add(clientTF		);
+		this.add(objIDTF		);
 		this.add(objInstanceIDTF);
-		this.add(resourceTF);
-		this.add(valueTF);
+		this.add(resourceTF		);
+		this.add(valueTF		);
 
 		clientTF		.setBounds(xPos2, 60 + 0 * 30, xSize2, ySize2);
 		objIDTF			.setBounds(xPos2, 60 + 1 * 30, xSize2, ySize2);
 		objInstanceIDTF	.setBounds(xPos2, 60 + 2 * 30, xSize2, ySize2);
 		resourceTF		.setBounds(xPos2, 60 + 3 * 30, xSize2, ySize2);
 		valueTF			.setBounds(xPos2, 60 + 4 * 30, xSize2, ySize2);
+
+		clientTF		.setText(CLIENT_DEFAULT_VALUE				);	
+		objIDTF			.setText(OBJECT_ID_DEFAULT_VALUE			);	
+		objInstanceIDTF	.setText(OBJECT_INSTANCE_ID_DEFAULT_VALUE	);
+		resourceTF		.setText(RESOURCE_ID_DEFAULT_VALUE			);
+		
 
 		for (int i = 0; i < buttonsNo; i++) {
 			button[i] = new Button("button" + i);
@@ -83,14 +95,16 @@ public class ControlPanel extends Frame {
 
 		}
 
-		button[0].setLabel("READ");
-		button[1].setLabel("WRITE");
-		button[2].setLabel("EXECUTE");
-		button[3].setLabel("bind observe");
-		button[4].setLabel("start fill-empty cycle");
+		button[0].setLabel("READ"						);
+		button[1].setLabel("WRITE"						);
+		button[2].setLabel("EXECUTE"					);
+		button[3].setLabel("bind observation"			);
+		button[4].setLabel("bind std observations"		);
+		button[5].setLabel("start fill-empty cycle"		);
 		
 		//TODO implement write and erase this line
 		button[1].setEnabled(false);
+		button[3].setEnabled(false);
 
 		// ---------------------------
 		this.setVisible(true); // ----Frame setVisible
