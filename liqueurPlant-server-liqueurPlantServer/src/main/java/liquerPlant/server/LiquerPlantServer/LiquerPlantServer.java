@@ -28,7 +28,7 @@ public class LiquerPlantServer {
 	private Process2Monitor siloMon2;
 
 	public static void main(String[] args) { //// args={serverIdentifier
-												//// serverIP serverPort }
+											 //// serverIP serverPort }
 
 		new LiquerPlantServer(args);
 
@@ -59,7 +59,7 @@ public class LiquerPlantServer {
 
 	// -------------------------------------------
 	public void actionRequestFromControlPanel(String i) {
-		System.out.println("function1-" + i);
+		//System.out.println("function1-" + i);
 		Client client;
 		LwM2mResponse response;
 
