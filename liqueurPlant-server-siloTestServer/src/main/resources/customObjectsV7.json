@@ -223,7 +223,7 @@
       },
 	  {
         "id": 2,
-        "name": "empty",
+        "name": "release",
         "operations": "E",
         "instancetype": "single",
         "mandatory": true,

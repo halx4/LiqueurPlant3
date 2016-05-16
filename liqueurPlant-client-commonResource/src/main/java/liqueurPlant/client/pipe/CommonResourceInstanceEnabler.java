@@ -27,7 +27,7 @@ public class CommonResourceInstanceEnabler extends BaseInstanceEnabler{
 			pipeGui.updateGui();
 		}
 	   //---------------------------------------
-	@Override
+	   @Override
 	    public ReadResponse read(int resourceid) {
 	       // System.out.println("Read on Pipe, resource " + resourceid);
 	        switch (resourceid) {
@@ -58,7 +58,6 @@ public class CommonResourceInstanceEnabler extends BaseInstanceEnabler{
 	        	
 	        	
 	        case 2://release
-	        	//System.out.println("     exe and is RELEASE");
 	        	if(params!=null){
 	        		requestReceived(new CommonResourceRequest(Integer.parseInt(params),CommonResourceRequestType.RELEASE));
 	        		return ExecuteResponse.success();
