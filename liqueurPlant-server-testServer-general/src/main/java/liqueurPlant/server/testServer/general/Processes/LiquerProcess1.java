@@ -1,6 +1,6 @@
-package liqueurPlant.server.LiqueurPlantServer.Processes;
+package liqueurPlant.server.testServer.general.Processes;
 
-import liqueurPlant.server.LiqueurPlantServer.monitors.Process1Monitor;
+import liqueurPlant.server.testServer.general.monitors.Process1Monitor;
 
 public class LiquerProcess1 extends LiquerPlantThread {
 	private Process1Monitor monitor;

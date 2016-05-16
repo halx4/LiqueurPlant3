@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiqueurPlantServer;
+package liqueurPlant.server.testServer.general;
 
 import java.util.Collection;
 import java.util.Iterator;

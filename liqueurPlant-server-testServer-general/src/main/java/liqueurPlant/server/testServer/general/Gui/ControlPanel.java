@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiqueurPlantServer.Gui;
+package liqueurPlant.server.testServer.general.Gui;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -9,7 +9,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import liqueurPlant.server.LiqueurPlantServer.TestServerGeneral;
+import liqueurPlant.server.testServer.general.TestServerGeneral;
 import liqueurPlant.utilities.ExitHandler;
 
 @SuppressWarnings("serial")

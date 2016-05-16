@@ -1,4 +1,4 @@
-package liqueurPlant.server.LiqueurPlantServer;
+package liqueurPlant.server.testServer.general;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,11 +6,11 @@ import java.net.InetSocketAddress;
 
 import liqueurPlant.core.LwM2mResourceParser;
 import liqueurPlant.core.ValveState;
-import liqueurPlant.server.LiqueurPlantServer.Gui.ControlPanel;
-import liqueurPlant.server.LiqueurPlantServer.Processes.LiquerProcess1;
-import liqueurPlant.server.LiqueurPlantServer.monitors.Process1Monitor;
 import liqueurPlant.server.core.CustomModelProvider;
 import liqueurPlant.server.core.ObservationCreator;
+import liqueurPlant.server.testServer.general.Gui.ControlPanel;
+import liqueurPlant.server.testServer.general.Processes.LiquerProcess1;
+import liqueurPlant.server.testServer.general.monitors.Process1Monitor;
 import liqueurPlant.utilities.PropertiesHandler;
 
 import org.eclipse.leshan.core.request.DiscoverRequest;
