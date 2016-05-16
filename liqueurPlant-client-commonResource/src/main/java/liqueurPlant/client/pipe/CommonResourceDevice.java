@@ -109,7 +109,7 @@ public class CommonResourceDevice {
 		List<ObjectModel> defaultObjectModels = ObjectLoader.loadDefault();
 
 		File f = new File("src" + File.separator + "main" + File.separator + "resources");
-		// System.out.println(f.exists());
+		System.out.println("custom objects folder found?" + f.exists());
 		List<ObjectModel> customObjectModels = ObjectLoader.load(f);
 
 		List<ObjectModel> allObjectModelsList = new ArrayList<ObjectModel>();
