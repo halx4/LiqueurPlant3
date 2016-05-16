@@ -19,7 +19,7 @@ bind observation (uses client,objID,ObjInstIP,ResIP)
 bind std observations (uses client)
 	establishes observations needed for fill-empty cycle
 	
-start fill-empty cycle (uses client)
+start fill-empty cycle (uses: - )
 	starts fill empty cycle. Before executing, "bind std observations" must have been executed succesfully.
 	
 //-------------------------------------

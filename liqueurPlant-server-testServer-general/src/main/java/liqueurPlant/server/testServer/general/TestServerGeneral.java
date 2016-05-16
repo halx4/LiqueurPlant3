@@ -1,3 +1,9 @@
+/**
+ * Liqueur Plant Test Server General
+ * version 1.0
+ * author: foivos christoulakis
+ */
+
 package liqueurPlant.server.testServer.general;
 
 import java.io.File;
@@ -28,11 +34,11 @@ public class TestServerGeneral {
 
 	private LeshanServer server;
 	private ObservationCreator observationCreator;
-	private Process1Monitor siloMon1;
+	private Process1Monitor siloMon;
 
 
-	public static void main(String[] args) { //// args={serverIdentifier
-												//// serverIP serverPort }
+	public static void main(String[] args) { 
+
 		if (args.length == 0) {
 			System.out.println("check arguments!");
 
@@ -119,19 +125,19 @@ public class TestServerGeneral {
 				break;
 		
 			case "bind std observations":// observations
-				siloMon1 = new Process1Monitor(1, server, client);
+				siloMon = new Process1Monitor(1, server, client);
 	
 				// silo1 filling complete
 				observationCreator.establishObservation		(clientStr, 16663, 0, 7);
-				observationCreator.addObservationListener	(clientStr, 16663, 0, 7, siloMon1);
+				observationCreator.addObservationListener	(clientStr, 16663, 0, 7, siloMon);
 	
 				// silo1 emptying complete
 				observationCreator.establishObservation		(clientStr, 16663, 0, 8);
-				observationCreator.addObservationListener	(clientStr, 16663, 0, 8, siloMon1);
+				observationCreator.addObservationListener	(clientStr, 16663, 0, 8, siloMon);
 	
 				break;
 			case "start fill-empty cycle": //  "bind std observations" must have been executed before this to work
-				LiquerProcess1 p1 = new LiquerProcess1(1, siloMon1);
+				LiquerProcess1 p1 = new LiquerProcess1(1, siloMon);
 				p1.start();
 				break;
 			}

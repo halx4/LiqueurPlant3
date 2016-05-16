@@ -14,7 +14,7 @@ import liqueurPlant.core.SmartSiloState;
 public class Process1Monitor implements ObservationListener {
 	protected int monitorID;
 	
-	protected Client siloInClient;
+	protected Client siloClient;
 
 	protected LeshanServer server;
 	
@@ -27,24 +27,24 @@ public class Process1Monitor implements ObservationListener {
 
 	public Process1Monitor(int monitorID,LeshanServer server,Client siloInClient) {
 		super();
-		this.siloInClient = siloInClient;
+		this.siloClient = siloInClient;
 		this.server = server;
 		this.monitorID=monitorID;
 	}
 
 
 	public  void sendSiloInFill() throws InterruptedException{
-		server.send(siloInClient, new ExecuteRequest(16663,0,1));
+		server.send(siloClient, new ExecuteRequest(16663,0,1));
 	}
 	
 
 	public  void sendSiloInEmpty() throws InterruptedException{
-		server.send(siloInClient, new ExecuteRequest(16663,0,2));
+		server.send(siloClient, new ExecuteRequest(16663,0,2));
 	}
 	
 
 	public  void sendSiloInStop() throws InterruptedException{
-		server.send(siloInClient, new ExecuteRequest(16663,0,3));
+		server.send(siloClient, new ExecuteRequest(16663,0,3));
 	}	
 
 	//----------------------------------
@@ -107,14 +107,14 @@ public class Process1Monitor implements ObservationListener {
 		String val=LwM2mResourceParser.valueOf(value);//val is the value of LwM2mNode only.
 
 
-		if(observationMatches(observation,siloInClient,16663,0,0)){//silo In state			//DEPRECATED
+		if(observationMatches(observation,siloClient,16663,0,0)){//silo In state			//DEPRECATED
 			siloInState=SmartSiloState.valueOf(val);
 			//if(siloInState==SmartSiloState.EMPTY)transferComplete=true;
 		}	
-		else if(observationMatches(observation,siloInClient,16663,0,7)){//silo in filling completed
+		else if(observationMatches(observation,siloClient,16663,0,7)){//silo in filling completed
 			setSiloInFillingCompleted(Boolean.parseBoolean(val));
 		}
-		else if(observationMatches(observation,siloInClient,16663,0,8)){//silo in emptying completed
+		else if(observationMatches(observation,siloClient,16663,0,8)){//silo in emptying completed
 			setSiloInEmptyingCompleted(Boolean.parseBoolean(val));
 			//transferComplete=true;
 		}
