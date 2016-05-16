@@ -20,7 +20,7 @@ public class CustomModelProvider implements LwM2mModelProvider {
 		
     	File f=new File("src"+File.separator+"main"+File.separator+"resources");
 		
-    	System.out.println("file exists? "+f.exists());
+    	System.out.println("custom objects folder found? "+f.exists());
     	List<ObjectModel> customObjectModels=ObjectLoader.load(f);
     	
     	List<ObjectModel> allObjectModelsList = new ArrayList<ObjectModel>();
