@@ -1,5 +1,7 @@
 package liqueurPlant.client.siloDriverHardware;
 
+import java.io.IOException;
+
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalInput;
@@ -11,9 +13,11 @@ import com.pi4j.io.gpio.RaspiPin;
 import com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerDigital;
 import com.pi4j.io.serial.Serial;
+import com.pi4j.io.serial.SerialConfig;
 import com.pi4j.io.serial.SerialDataEvent;
-import com.pi4j.io.serial.SerialDataListener;
+import com.pi4j.io.serial.SerialDataEventListener;
 import com.pi4j.io.serial.SerialFactory;
+import com.pi4j.util.Console;
 
 import liqueurPlant.core.HeaterState;
 import liqueurPlant.core.LevelSensorOutputState;
@@ -71,8 +75,12 @@ public class SiloHardwareDriver implements SiloDriverInterface {
 		 //		SERIAL
 		 serial=SerialFactory.createInstance();
 		 serial.addListener(serialListener);
-		 serial.open(Serial.DEFAULT_COM_PORT, 9600);
-		 
+		 try {
+			serial.open(new SerialConfig());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -172,22 +180,28 @@ public class SiloHardwareDriver implements SiloDriverInterface {
 		}
 	}
 	//############################
-	class SerialListener implements SerialDataListener{
+	class SerialListener implements SerialDataEventListener{
 
 		@Override
 		public void dataReceived(SerialDataEvent event) {
-			String receivedString=event.getData();
-			//System.out.println("RECIEVED STRING :"+event.getData()+"END");
-			if(receivedString.startsWith("T=") && receivedString.endsWith("\n")){
-				
-					//System.out.println("ends with \\n");
-					float temperature=Float.parseFloat(receivedString.substring(2,receivedString.length()-1));
-					//System.out.println("new string="+receivedString+"END");
-					//System.out.println(temperature);
-					setTemperature(temperature);
-				
+			String receivedString;
+			try {
+				receivedString = event.getAsciiString();
+		
+				//System.out.println("RECIEVED STRING :"+event.getData()+"END");
+				if(receivedString.startsWith("T=") && receivedString.endsWith("\n")){
+					
+						//System.out.println("ends with \\n");
+						float temperature=Float.parseFloat(receivedString.substring(2,receivedString.length()-1));
+						//System.out.println("new string="+receivedString+"END");
+						//System.out.println(temperature);
+						setTemperature(temperature);
+					
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			
 		}	
 	}
 	//###########################	
