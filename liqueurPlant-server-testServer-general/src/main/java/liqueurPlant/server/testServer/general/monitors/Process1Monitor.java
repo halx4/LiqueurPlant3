@@ -109,14 +109,12 @@ public class Process1Monitor implements ObservationListener {
 
 		if(observationMatches(observation,siloClient,16663,0,0)){//silo In state			//DEPRECATED
 			siloInState=SmartSiloState.valueOf(val);
-			//if(siloInState==SmartSiloState.EMPTY)transferComplete=true;
 		}	
 		else if(observationMatches(observation,siloClient,16663,0,7)){//silo in filling completed
 			setSiloInFillingCompleted(Boolean.parseBoolean(val));
 		}
 		else if(observationMatches(observation,siloClient,16663,0,8)){//silo in emptying completed
 			setSiloInEmptyingCompleted(Boolean.parseBoolean(val));
-			//transferComplete=true;
 		}
 
 		else {
@@ -125,9 +123,7 @@ public class Process1Monitor implements ObservationListener {
 
 		}
 		
-		//System.out.println("MON"+ monitorID   +" OBSERVE:"+server.getClientRegistry().findByRegistrationId(observation.getRegistrationId()).getEndpoint()+" "+observation.getPath().getObjectId()+" "+observation.getPath().getObjectInstanceId()+" "+observation.getPath().getResourceId()+" = "+val);
-		//System.out.println("        siloInState="+siloInState+" siloOutState="+siloOutState +" pipeOwner="+pipeOwner+" powerOwner="+powerOwner+" transferCompl="+transferComplete+" heatCompl="+heatComplete+" mixCompl="+mixComplete+" heaterState="+heaterState+" mixerState="+mixerState);
-		
+
 		notifyAll();
 	}
 	
@@ -136,7 +132,6 @@ public class Process1Monitor implements ObservationListener {
 	//-----------------------------
 	@Override
 	public void cancelled(Observation observation) {
-		// TODO Auto-generated method stub
 		System.err.println("observation cancelled : "+server.getClientRegistry().findByRegistrationId(observation.getRegistrationId()).getEndpoint()+" "+observation.getPath().getObjectId()+" "+observation.getPath().getObjectInstanceId()+" "+observation.getPath().getResourceId());
 		
 	}
