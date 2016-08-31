@@ -14,6 +14,7 @@ import liqueurPlant.server.LiqueurPlantServer.monitors.Process2Monitor;
 import liqueurPlant.server.core.CustomModelProvider;
 import liqueurPlant.server.core.ObservationCreator;
 import liqueurPlant.utilities.PropertiesHandler;
+import liqueurPlant.utilities.PropertyNotFoundException;
 
 import org.eclipse.leshan.core.request.DiscoverRequest;
 import org.eclipse.leshan.core.request.ExecuteRequest;
@@ -24,7 +25,7 @@ import org.eclipse.leshan.server.californium.impl.LeshanServer;
 import org.eclipse.leshan.server.client.Client;
 import org.eclipse.leshan.server.client.ClientRegistry;
 
-import com.sun.javafx.fxml.PropertyNotFoundException;
+//import com.sun.javafx.fxml.PropertyNotFoundException;
 
 public class LiquerPlantServer {
 

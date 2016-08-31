@@ -7,7 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import com.sun.javafx.fxml.PropertyNotFoundException;
+//import com.sun.javafx.fxml.PropertyNotFoundException;
+
 
 public class PropertiesHandler {
 	private Properties properties = new Properties();
