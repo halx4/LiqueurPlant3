@@ -11,6 +11,7 @@ import java.util.List;
 
 import liqueurPlant.client.core.MyInstanceEnablerFactory;
 import liqueurPlant.utilities.PropertiesHandler;
+import liqueurPlant.utilities.PropertyNotFoundException;
 
 import org.eclipse.leshan.ResponseCode;
 import org.eclipse.leshan.client.californium.LeshanClient;
@@ -24,7 +25,7 @@ import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.RegisterRequest;
 import org.eclipse.leshan.core.response.RegisterResponse;
 
-import com.sun.javafx.fxml.PropertyNotFoundException;
+//import com.sun.javafx.fxml.PropertyNotFoundException;
 
 public class CommonResourceDevice {
 	private int supportedObjectsIds[] = { 0, 1, 3, 16666 };
