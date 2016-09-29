@@ -25,6 +25,7 @@ import liqueurPlant.client.siloSimulator.SiloParameters;
 import liqueurPlant.client.siloSimulator.SiloSimulatorDriver;
 import liqueurPlant.core.SiloDriverInterface;
 import liqueurPlant.utilities.PropertiesHandler;
+import liqueurPlant.utilities.PropertyNotFoundException;
 
 import org.eclipse.leshan.ResponseCode;
 import org.eclipse.leshan.client.californium.LeshanClient;
@@ -37,7 +38,7 @@ import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.RegisterRequest;
 import org.eclipse.leshan.core.response.RegisterResponse;
 
-import com.sun.javafx.fxml.PropertyNotFoundException;
+//import com.sun.javafx.fxml.PropertyNotFoundException;
 
 public class SiloDevice {
 	private int supportedObjectsIds[] = { 0, 1, 3, 3303, 16663, 16664, 16665, 16667, 16668 }; // TODO
