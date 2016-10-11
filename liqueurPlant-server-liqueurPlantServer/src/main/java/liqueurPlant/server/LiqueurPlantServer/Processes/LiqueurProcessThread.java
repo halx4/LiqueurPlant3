@@ -1,9 +1,9 @@
 package liqueurPlant.server.LiqueurPlantServer.Processes;
 
-public class LiquerPlantThread extends Thread {
+public class LiqueurProcessThread extends Thread {
 	private int processID;
 
-	public LiquerPlantThread(int processID) {
+	public LiqueurProcessThread(int processID) {
 		super();
 		this.processID = processID;
 	}
