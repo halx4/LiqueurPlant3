@@ -7,8 +7,8 @@ import java.net.InetSocketAddress;
 import liqueurPlant.core.LwM2mResourceParser;
 import liqueurPlant.core.ValveState;
 import liqueurPlant.server.LiqueurPlantServer.Gui.ControlPanel;
-import liqueurPlant.server.LiqueurPlantServer.Processes.LiquerProcess1;
-import liqueurPlant.server.LiqueurPlantServer.Processes.LiquerProcess2;
+import liqueurPlant.server.LiqueurPlantServer.Processes.LiqueurGenerationProcess1;
+import liqueurPlant.server.LiqueurPlantServer.Processes.LiqueurGenerationProcess2;
 import liqueurPlant.server.LiqueurPlantServer.monitors.Process1Monitor;
 import liqueurPlant.server.LiqueurPlantServer.monitors.Process2Monitor;
 import liqueurPlant.server.core.CustomModelProvider;
@@ -252,8 +252,8 @@ public class LiquerPlantServer {
 
 			break;
 		case "start processes":
-			LiquerProcess1 p1 = new LiquerProcess1(1, siloMon1);
-			LiquerProcess2 p2 = new LiquerProcess2(2, siloMon2);
+			LiqueurGenerationProcess1 p1 = new LiqueurGenerationProcess1(1, siloMon1);
+			LiqueurGenerationProcess2 p2 = new LiqueurGenerationProcess2(2, siloMon2);
 			p1.start();
 			p2.start();
 			// System.out.println("processes started");
