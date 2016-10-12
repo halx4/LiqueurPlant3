@@ -2,12 +2,12 @@ package liqueurPlant.server.LiqueurPlantServer.Processes;
 
 import liqueurPlant.server.LiqueurPlantServer.monitors.Process2Monitor;
 
-public class LiquerProcess2 extends LiquerPlantThread {
+public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	private Process2Monitor monitor;
 	
 	private SubProcess subprocess;
 
-	public LiquerProcess2(int processID,Process2Monitor monitor) {
+	public LiqueurGenerationProcess2(int processID,Process2Monitor monitor) {
 		super(processID);
 		this.monitor=monitor;
 	}
@@ -89,7 +89,7 @@ public class LiquerProcess2 extends LiquerPlantThread {
 	
 	}//end run
 		
-	class SubProcess extends LiquerPlantThread{
+	class SubProcess extends LiqueurProcessThread{
 
 		
 		SubProcess(int processID) {

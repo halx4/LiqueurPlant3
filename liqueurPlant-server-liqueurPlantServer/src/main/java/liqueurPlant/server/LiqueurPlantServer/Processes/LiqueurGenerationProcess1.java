@@ -2,11 +2,11 @@ package liqueurPlant.server.LiqueurPlantServer.Processes;
 
 import liqueurPlant.server.LiqueurPlantServer.monitors.Process1Monitor;
 
-public class LiquerProcess1 extends LiquerPlantThread {
+public class LiqueurGenerationProcess1 extends LiqueurProcessThread {
 	private Process1Monitor monitor;
 	
 
-	public LiquerProcess1(int processID,Process1Monitor monitor) {
+	public LiqueurGenerationProcess1(int processID,Process1Monitor monitor) {
 		super(processID);
 		this.monitor=monitor;
 	}
