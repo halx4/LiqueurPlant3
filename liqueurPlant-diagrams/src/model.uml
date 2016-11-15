@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_6w9NgKqQEeaguZTe-QIqbA" name="RootElement">
+    <packagedElement xmi:type="uml:Package" xmi:id="_D7_c4KqVEeakmNmCT5r1Aw" name="liqueurPlant-core">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ECuXAKqVEeakmNmCT5r1Aw" name="liqueurPlant">
+        <packagedElement xmi:type="uml:Package" xmi:id="_ECwMMKqVEeakmNmCT5r1Aw" name="annotationsStuff">
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_EC1rwKqVEeakmNmCT5r1Aw" name="ResourceMultiplicity" visibility="public">
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EC59MKqVEeakmNmCT5r1Aw" name="SINGLE"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EC8ZcKqVEeakmNmCT5r1Aw" name="MULTIPLE"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EC-OoKqVEeakmNmCT5r1Aw" name="NOTDEFHERE"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_EDB5AKqVEeakmNmCT5r1Aw" name="ServiceEnablementOp" visibility="public">
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDEVQKqVEeakmNmCT5r1Aw" name="READ"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDHYkKqVEeakmNmCT5r1Aw" name="DISCOVER"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDJNwKqVEeakmNmCT5r1Aw" name="WRITE"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDLqAKqVEeakmNmCT5r1Aw" name="WRITEATTRIBUTES"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDOGQKqVEeakmNmCT5r1Aw" name="EXECUTE"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDQigKqVEeakmNmCT5r1Aw" name="CREATE"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDTl0KqVEeakmNmCT5r1Aw" name="DELETE"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EDWCEKqVEeakmNmCT5r1Aw" name="NOTDEFHERE"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Enumeration" xmi:id="_EFCrMKqVEeakmNmCT5r1Aw" name="Mandatory" visibility="public">
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EFEgYKqVEeakmNmCT5r1Aw" name="MANDATORY"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EFFugKqVEeakmNmCT5r1Aw" name="OPTIONAL"/>
+            <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EFG8oKqVEeakmNmCT5r1Aw" name="NOTDEFHERE"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xALdsKqVEeakmNmCT5r1Aw" name="liqueurPlant-client-core">
+      <packagedElement xmi:type="uml:Package" xmi:id="_xARkUKqVEeakmNmCT5r1Aw" name="liqueurPlant">
+        <packagedElement xmi:type="uml:Package" xmi:id="_xASLYKqVEeakmNmCT5r1Aw" name="client">
+          <packagedElement xmi:type="uml:Package" xmi:id="_xASycKqVEeakmNmCT5r1Aw" name="core">
+            <packagedElement xmi:type="uml:Class" xmi:id="_xAVOsKqVEeakmNmCT5r1Aw" name="MyInstanceEnablerFactory" visibility="public">
+              <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_xA4oUKqVEeakmNmCT5r1Aw" name="MyInstanceEnablerFactory implements LwM2mInstanceEnablerFactory" client="_xAVOsKqVEeakmNmCT5r1Aw" supplier="_xAZgIKqVEeakmNmCT5r1Aw" contract="_xAZgIKqVEeakmNmCT5r1Aw"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xBY-oKqVEeakmNmCT5r1Aw" name="create" specification="_xBDAYKqVEeakmNmCT5r1Aw">
+                <language>JAVA</language>
+                <body>&#xD;
+    System.err.println(&quot;INSTANCE ENABLER FACTORY INVOKED &lt;---&lt;&quot;);&#xD;
+    return null;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_xBDAYKqVEeakmNmCT5r1Aw" name="create" visibility="public" method="_xBY-oKqVEeakmNmCT5r1Aw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_xBH44KqVEeakmNmCT5r1Aw" type="_xBDncKqVEeakmNmCT5r1Aw" direction="return"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_xBJHAKqVEeakmNmCT5r1Aw" name="model" type="_xA9g0aqVEeakmNmCT5r1Aw"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_x13IgKqVEeakmNmCT5r1Aw" name="ObserversUpdater" visibility="public">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_x2T0cKqVEeakmNmCT5r1Aw" name="fireResourcesChange" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_x2UbgKqVEeakmNmCT5r1Aw" name="resourceId">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_ynlgYKqVEeakmNmCT5r1Aw" name="SiloStateChangeListener" visibility="public">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_ynvRYKqVEeakmNmCT5r1Aw" name="siloStateChanged" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_ynwfgKqVEeakmNmCT5r1Aw" name="siloState" type="_ynpx0aqVEeakmNmCT5r1Aw"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xAWc0KqVEeakmNmCT5r1Aw" name="leshan">
+      <packagedElement xmi:type="uml:Package" xmi:id="_xAWc0aqVEeakmNmCT5r1Aw" name="org">
+        <packagedElement xmi:type="uml:Package" xmi:id="_xAXq8KqVEeakmNmCT5r1Aw" name="eclipse">
+          <packagedElement xmi:type="uml:Package" xmi:id="_xAYSAKqVEeakmNmCT5r1Aw" name="leshan">
+            <packagedElement xmi:type="uml:Package" xmi:id="_xAYSAaqVEeakmNmCT5r1Aw" name="client">
+              <packagedElement xmi:type="uml:Package" xmi:id="_xAY5EKqVEeakmNmCT5r1Aw" name="resource">
+                <packagedElement xmi:type="uml:Interface" xmi:id="_xAZgIKqVEeakmNmCT5r1Aw" name="LwM2mInstanceEnablerFactory"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_xBDncKqVEeakmNmCT5r1Aw" name="LwM2mInstanceEnabler"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_5JOocKqVEeakmNmCT5r1Aw" name="BaseInstanceEnabler"/>
+              </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_xA85wKqVEeakmNmCT5r1Aw" name="core">
+              <packagedElement xmi:type="uml:Package" xmi:id="_xA9g0KqVEeakmNmCT5r1Aw" name="model">
+                <packagedElement xmi:type="uml:Class" xmi:id="_xA9g0aqVEeakmNmCT5r1Aw" name="ObjectModel"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_5JlNwaqVEeakmNmCT5r1Aw" name="response">
+                <packagedElement xmi:type="uml:Class" xmi:id="_5Jl00KqVEeakmNmCT5r1Aw" name="ReadResponse"/>
+                <packagedElement xmi:type="uml:Class" xmi:id="_5Jvl0KqVEeakmNmCT5r1Aw" name="WriteResponse"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Package" xmi:id="_5Jr7cKqVEeakmNmCT5r1Aw" name="node">
+                <packagedElement xmi:type="uml:Class" xmi:id="_5Jr7caqVEeakmNmCT5r1Aw" name="LwM2mResource"/>
+              </packagedElement>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ynn8oKqVEeakmNmCT5r1Aw" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ynojsKqVEeakmNmCT5r1Aw" name="liqueurPlant">
+        <packagedElement xmi:type="uml:Package" xmi:id="_ynpx0KqVEeakmNmCT5r1Aw" name="core">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ynpx0aqVEeakmNmCT5r1Aw" name="SiloState"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_5JXLUKqVEeakmNmCT5r1Aw" name="client">
+          <packagedElement xmi:type="uml:Package" xmi:id="_5JXyYKqVEeakmNmCT5r1Aw" name="silo">
+            <packagedElement xmi:type="uml:Class" xmi:id="_5JYZcKqVEeakmNmCT5r1Aw" name="SiloController"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5JDCQKqVEeakmNmCT5r1Aw" name="liqueurPlant-client-silo">
+      <packagedElement xmi:type="uml:Package" xmi:id="_5JJv8KqVEeakmNmCT5r1Aw" name="liqueurPlant">
+        <packagedElement xmi:type="uml:Package" xmi:id="_5JKXAKqVEeakmNmCT5r1Aw" name="client">
+          <packagedElement xmi:type="uml:Package" xmi:id="_5JKXAaqVEeakmNmCT5r1Aw" name="silo">
+            <packagedElement xmi:type="uml:Package" xmi:id="_5JK-EKqVEeakmNmCT5r1Aw" name="Enablers">
+              <packagedElement xmi:type="uml:Class" xmi:id="_5JNaUKqVEeakmNmCT5r1Aw" name="HeaterInstanceEnabler" visibility="public">
+                <generalization xmi:type="uml:Generalization" xmi:id="_5JSS0KqVEeakmNmCT5r1Aw" general="_5JOocKqVEeakmNmCT5r1Aw"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_5JbcwKqVEeakmNmCT5r1Aw" name="smartSilo" visibility="private" type="_5JYZcKqVEeakmNmCT5r1Aw" isUnique="false"/>
+                <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_5JVWIaqVEeakmNmCT5r1Aw" name="HeaterInstanceEnabler implements ObserversUpdater" client="_5JNaUKqVEeakmNmCT5r1Aw" supplier="_x13IgKqVEeakmNmCT5r1Aw" contract="_x13IgKqVEeakmNmCT5r1Aw"/>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5JkmsKqVEeakmNmCT5r1Aw" name="HeaterInstanceEnabler" specification="_5Jcq4KqVEeakmNmCT5r1Aw">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    this.smartSilo = smartSilo;&#xD;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5JqtUKqVEeakmNmCT5r1Aw" name="read" specification="_5JlNwKqVEeakmNmCT5r1Aw">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    System.out.println(&quot;Read on Heater, resource &quot; + resourceid);&#xD;
+    switch(resourceid) {&#xD;
+        case //  on/off&#xD;
+        5850:&#xD;
+            return ReadResponse.success(resourceid, HeaterState.heaterState2Boolean(smartSilo.getHeaterState()));&#xD;
+        default:&#xD;
+            return super.read(resourceid);&#xD;
+    }&#xD;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5J1scKqVEeakmNmCT5r1Aw" name="write" specification="_5Ju-wKqVEeakmNmCT5r1Aw">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    System.out.println(&quot;Write on resource &quot; + resourceid + &quot; value &quot; + value);&#xD;
+    switch(resourceid) {&#xD;
+        case // on/off&#xD;
+        5850:&#xD;
+            if (smartSilo.setHeaterState(HeaterState.boolean2HeaterState((boolean) value.getValue())))&#xD;
+                return WriteResponse.success();&#xD;
+            else&#xD;
+                return WriteResponse.methodNotAllowed();&#xD;
+        default:&#xD;
+            return super.write(resourceid, value);&#xD;
+    }&#xD;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_5Jcq4KqVEeakmNmCT5r1Aw" name="HeaterInstanceEnabler" visibility="public" method="_5JkmsKqVEeakmNmCT5r1Aw">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_5Jj_oKqVEeakmNmCT5r1Aw" name="smartSilo" type="_5JYZcKqVEeakmNmCT5r1Aw"/>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_5JlNwKqVEeakmNmCT5r1Aw" name="read" visibility="public" method="_5JqtUKqVEeakmNmCT5r1Aw">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_5JoREaqVEeakmNmCT5r1Aw" type="_5Jl00KqVEeakmNmCT5r1Aw" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_5JpfMKqVEeakmNmCT5r1Aw" name="resourceid">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                  </ownedParameter>
+                </ownedOperation>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_5Ju-wKqVEeakmNmCT5r1Aw" name="write" visibility="public" method="_5J1scKqVEeakmNmCT5r1Aw">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_5JypIKqVEeakmNmCT5r1Aw" type="_5Jvl0KqVEeakmNmCT5r1Aw" direction="return"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_5JzQMKqVEeakmNmCT5r1Aw" name="resourceid">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_5J1FYKqVEeakmNmCT5r1Aw" name="value" type="_5Jr7caqVEeakmNmCT5r1Aw"/>
+                </ownedOperation>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Abstraction" xmi:id="_9wlOEKqVEeakmNmCT5r1Aw" client="_6w9NgKqQEeaguZTe-QIqbA" supplier="_x13IgKqVEeakmNmCT5r1Aw"/>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_EAZbwKqVEeakmNmCT5r1Aw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EAdtMKqVEeakmNmCT5r1Aw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_EBQ-cKqVEeakmNmCT5r1Aw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EBSzoKqVEeakmNmCT5r1Aw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_EBuRcKqVEeakmNmCT5r1Aw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_EBvfkKqVEeakmNmCT5r1Aw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_xAveYKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.client.resource.LwM2mInstanceEnablerFactory" base_Classifier="_xAZgIKqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_xBCZUKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.core.model.ObjectModel" base_Classifier="_xA9g0aqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_xBGqwKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.client.resource.LwM2mInstanceEnabler" base_Classifier="_xBDncKqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:Variadic xmi:id="_x2Ys8KqVEeakmNmCT5r1Aw" base_Parameter="_x2UbgKqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_yntcMKqVEeakmNmCT5r1Aw" name="liqueurPlant.core.SiloState" base_Classifier="_ynpx0aqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_5JRrwKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.client.resource.BaseInstanceEnabler" base_Classifier="_5JOocKqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_5JVWIKqVEeakmNmCT5r1Aw" name="liqueurPlant.client.core.ObserversUpdater" base_Classifier="_x13IgKqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_5Ja1sKqVEeakmNmCT5r1Aw" name="liqueurPlant.client.silo.SiloController" base_Classifier="_5JYZcKqVEeakmNmCT5r1Aw"/>
+  <standard:Create xmi:id="_5JiKcKqVEeakmNmCT5r1Aw" base_BehavioralFeature="_5Jcq4KqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_5JoREKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.core.response.ReadResponse" base_Classifier="_5Jl00KqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_5JuXsKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.core.node.LwM2mResource" base_Classifier="_5Jr7caqVEeakmNmCT5r1Aw"/>
+  <PapyrusJava:External xmi:id="_5JyCEKqVEeakmNmCT5r1Aw" name="org.eclipse.leshan.core.response.WriteResponse" base_Classifier="_5Jvl0KqVEeakmNmCT5r1Aw"/>
+</xmi:XMI>
