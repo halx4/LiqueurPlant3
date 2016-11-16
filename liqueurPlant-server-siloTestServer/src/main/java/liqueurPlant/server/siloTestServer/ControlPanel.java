@@ -6,6 +6,8 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import liqueurPlant.utilities.ExitHandler;
+
 @SuppressWarnings("serial")
 public class ControlPanel extends Frame {
 	private final int buttonsNo=25;
@@ -20,6 +22,7 @@ public class ControlPanel extends Frame {
 		this.setTitle("Server Control Panel");
 		this.setLayout(null);
 		this.setFont(new Font("TimesRoman", Font.PLAIN, 14));
+		this.addWindowListener(new ExitHandler()); 
 		this.setBackground(new Color(112, 135, 159));
 		setBounds(50,50,200,100+buttonsNo*30);
 		
