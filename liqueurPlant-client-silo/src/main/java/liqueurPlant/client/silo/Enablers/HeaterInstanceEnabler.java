@@ -11,11 +11,11 @@ import org.eclipse.leshan.core.response.WriteResponse;
 
 public class HeaterInstanceEnabler extends BaseInstanceEnabler implements ObserversUpdater{
 
-	private SiloController smartSilo;
+	private SiloController siloController;
 	
 	
 	public HeaterInstanceEnabler(SiloController smartSilo) {
-		this.smartSilo=smartSilo;
+		this.siloController=smartSilo;
 
 	}
 
@@ -25,7 +25,7 @@ public class HeaterInstanceEnabler extends BaseInstanceEnabler implements Observ
         System.out.println("Read on Heater, resource " + resourceid);
         switch (resourceid) {
          case 5850://  on/off
-        	return ReadResponse.success(resourceid,  HeaterState.heaterState2Boolean(smartSilo.getHeaterState()));
+        	return ReadResponse.success(resourceid,  HeaterState.heaterState2Boolean(siloController.getHeaterState()));
         default:
             return super.read(resourceid);
         }
@@ -36,7 +36,7 @@ public class HeaterInstanceEnabler extends BaseInstanceEnabler implements Observ
         System.out.println("Write on resource " + resourceid + " value " + value);
         switch (resourceid) {
         case 5850:// on/off
-             if(smartSilo.setHeaterState(  HeaterState.boolean2HeaterState((boolean) value.getValue()))) return WriteResponse.success();
+             if(siloController.setHeaterState(  HeaterState.boolean2HeaterState((boolean) value.getValue()))) return WriteResponse.success();
             else return WriteResponse. 	methodNotAllowed();
         default:
             return super.write(resourceid, value);

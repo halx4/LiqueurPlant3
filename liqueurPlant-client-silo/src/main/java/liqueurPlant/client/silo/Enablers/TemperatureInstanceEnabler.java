@@ -8,11 +8,11 @@ import org.eclipse.leshan.core.response.ReadResponse;
 
 public class TemperatureInstanceEnabler extends BaseInstanceEnabler implements ObserversUpdater{
 
-	private SiloController smartSilo;
+	private SiloController siloController;
 	
 	
 	public TemperatureInstanceEnabler(SiloController smartSilo) {
-		this.smartSilo=smartSilo;
+		this.siloController=smartSilo;
 
 	}
 
@@ -21,7 +21,7 @@ public class TemperatureInstanceEnabler extends BaseInstanceEnabler implements O
         System.out.println("Read on temperature, resource " + resourceid);
         switch (resourceid) {
          case 5700://  sensor value
-        	return ReadResponse.success(resourceid,  smartSilo.getTemperature().getValue()	);
+        	return ReadResponse.success(resourceid,  siloController.getTemperature().getValue()	);
         default:
             return super.read(resourceid);
         }
