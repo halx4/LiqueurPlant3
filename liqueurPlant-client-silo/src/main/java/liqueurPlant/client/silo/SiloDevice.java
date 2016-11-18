@@ -1,7 +1,6 @@
 package liqueurPlant.client.silo;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
@@ -38,7 +37,6 @@ import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.RegisterRequest;
 import org.eclipse.leshan.core.response.RegisterResponse;
 
-//import com.sun.javafx.fxml.PropertyNotFoundException;
 
 public class SiloDevice {
 	private int supportedObjectsIds[] = { 0, 1, 3, 3303, 16663, 16664, 16665, 16667, 16668 }; // TODO
@@ -369,6 +367,7 @@ public class SiloDevice {
 
 	}
 
+	@Deprecated
 	private ObjectModel getObjectModelFromListById(int id, List<ObjectModel> models) {
 		Iterator<ObjectModel> iter = models.iterator();
 		while (iter.hasNext()) {

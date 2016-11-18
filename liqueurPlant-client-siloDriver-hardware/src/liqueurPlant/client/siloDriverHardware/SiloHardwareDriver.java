@@ -17,8 +17,6 @@ import com.pi4j.io.serial.SerialConfig;
 import com.pi4j.io.serial.SerialDataEvent;
 import com.pi4j.io.serial.SerialDataEventListener;
 import com.pi4j.io.serial.SerialFactory;
-import com.pi4j.util.Console;
-
 import liqueurPlant.core.HeaterState;
 import liqueurPlant.core.LevelSensorOutputState;
 import liqueurPlant.core.MixerState;

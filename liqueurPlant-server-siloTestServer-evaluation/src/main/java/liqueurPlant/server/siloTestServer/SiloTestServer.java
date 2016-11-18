@@ -6,14 +6,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Set;
-
 import liqueurPlant.core.LwM2mResourceParser;
 import liqueurPlant.server.core.CustomModelProvider;
 import liqueurPlant.server.core.ObservationCreator;
 
-import org.eclipse.leshan.core.node.LwM2mResource;
-import org.eclipse.leshan.core.observation.Observation;
 import org.eclipse.leshan.core.request.ExecuteRequest;
 import org.eclipse.leshan.core.request.ReadRequest;
 import org.eclipse.leshan.core.request.WriteRequest;
@@ -22,7 +18,6 @@ import org.eclipse.leshan.server.californium.LeshanServerBuilder;
 import org.eclipse.leshan.server.californium.impl.LeshanServer;
 import org.eclipse.leshan.server.client.Client;
 import org.eclipse.leshan.server.client.ClientRegistry;
-import org.eclipse.leshan.server.observation.ObservationRegistry;
 
 public class SiloTestServer {
 
