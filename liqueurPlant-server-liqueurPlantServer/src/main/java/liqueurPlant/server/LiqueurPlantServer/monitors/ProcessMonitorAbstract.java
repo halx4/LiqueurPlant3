@@ -252,7 +252,7 @@ public abstract class ProcessMonitorAbstract implements ObservationListener {
 		}
 	}
 	
-	public synchronized void waitForLiquerTransfer(){
+	public synchronized void waitForLiqueurTransfer(){
 		//TODO	
 		while(!transferComplete){
 			try {

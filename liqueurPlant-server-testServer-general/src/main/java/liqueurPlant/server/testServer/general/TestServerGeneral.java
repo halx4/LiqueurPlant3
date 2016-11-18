@@ -15,7 +15,7 @@ import liqueurPlant.core.ValveState;
 import liqueurPlant.server.core.CustomModelProvider;
 import liqueurPlant.server.core.ObservationCreator;
 import liqueurPlant.server.testServer.general.Gui.ControlPanel;
-import liqueurPlant.server.testServer.general.Processes.LiquerProcess1;
+import liqueurPlant.server.testServer.general.Processes.LiqueurProcess1;
 import liqueurPlant.server.testServer.general.monitors.Process1Monitor;
 import liqueurPlant.utilities.PropertiesHandler;
 import liqueurPlant.utilities.PropertyNotFoundException;
@@ -138,7 +138,7 @@ public class TestServerGeneral {
 	
 				break;
 			case "start fill-empty cycle": //  "bind std observations" must have been executed before this to work
-				LiquerProcess1 p1 = new LiquerProcess1(1, siloMon);
+				LiqueurProcess1 p1 = new LiqueurProcess1(1, siloMon);
 				p1.start();
 				break;
 			}

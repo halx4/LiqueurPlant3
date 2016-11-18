@@ -27,7 +27,7 @@ import org.eclipse.leshan.server.client.ClientRegistry;
 
 //import com.sun.javafx.fxml.PropertyNotFoundException;
 
-public class LiquerPlantServer {
+public class LiqueurPlantServer {
 
 	private LeshanServer server;
 	private ObservationCreator observationCreator;
@@ -41,13 +41,13 @@ public class LiquerPlantServer {
 
 		} else {
 
-			new LiquerPlantServer(args[0]);
+			new LiqueurPlantServer(args[0]);
 		}
 
 	}
 
 	// -------------------------------------------
-	public LiquerPlantServer(String propertiesFilename) {
+	public LiqueurPlantServer(String propertiesFilename) {
 
 		PropertiesHandler props = null;
 
@@ -302,7 +302,7 @@ public class LiquerPlantServer {
 					+ LwM2mResourceParser.valueOf(response));
 			break;
 		default:
-			System.err.println("LiquerPlantServer:NOT SUPPORTED COMMAND");
+			System.err.println("LiqueurPlantServer:NOT SUPPORTED COMMAND");
 
 		}
 

@@ -16,7 +16,7 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	@Override
 	public void run(){
 		String id=Integer.toString( getProcessID());
-		System.out.println("starting LiquerProcess1. processID= "+getProcessID());
+		System.out.println("starting LiqueurProcess1. processID= "+getProcessID());
 		try{
 			monitor.sendSiloInFill();
 			monitor.sendSiloOutEmpty();
@@ -41,7 +41,7 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 					monitor.sendSiloInEmpty();
 					monitor.sendSiloOutFill();
 					System.out.println("P"+id+" MARK 3");
-					monitor.waitForLiquerTransfer();
+					monitor.waitForLiqueurTransfer();
 					
 					
 					

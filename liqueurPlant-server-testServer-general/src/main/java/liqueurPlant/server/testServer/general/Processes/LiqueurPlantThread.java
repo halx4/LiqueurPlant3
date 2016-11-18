@@ -1,9 +1,9 @@
 package liqueurPlant.server.testServer.general.Processes;
 
-public class LiquerPlantThread extends Thread {
+public class LiqueurPlantThread extends Thread {
 	private int processID;
 
-	public LiquerPlantThread(int processID) {
+	public LiqueurPlantThread(int processID) {
 		super();
 		this.processID = processID;
 	}

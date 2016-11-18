@@ -7,17 +7,17 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import liqueurPlant.server.LiqueurPlantServer.LiquerPlantServer;
+import liqueurPlant.server.LiqueurPlantServer.LiqueurPlantServer;
 import liqueurPlant.utilities.ExitHandler;
 
 @SuppressWarnings("serial")
 public class ControlPanel extends Frame {
 	private final int buttonsNo=2;
-	private LiquerPlantServer server;
+	private LiqueurPlantServer server;
 	private Button[] button=new Button[buttonsNo];
 	private ButtonHandler buttonHandler;
 
-	public ControlPanel(LiquerPlantServer server) {
+	public ControlPanel(LiqueurPlantServer server) {
 		buttonHandler=new ButtonHandler();
 		this.server = server;
 

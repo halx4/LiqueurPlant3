@@ -1,4 +1,4 @@
-package liquerPlant.client.siloDriverCodesys.test;
+package liqueurPlant.client.siloDriverCodesys.test;
 
 import java.awt.Color;
 import java.awt.Font;
