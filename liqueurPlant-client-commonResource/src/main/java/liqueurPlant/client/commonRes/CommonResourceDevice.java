@@ -25,7 +25,6 @@ import org.eclipse.leshan.core.model.ObjectModel;
 import org.eclipse.leshan.core.request.RegisterRequest;
 import org.eclipse.leshan.core.response.RegisterResponse;
 
-//import com.sun.javafx.fxml.PropertyNotFoundException;
 
 public class CommonResourceDevice {
 	private int supportedObjectsIds[] = { 0, 1, 3, 16666 };
