@@ -1,4 +1,4 @@
-package liqueurPlant.client.pipe;
+package liqueurPlant.client.commonRes;
 
 public class CommonResource {
 		private int ownerID=-1;

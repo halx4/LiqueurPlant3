@@ -1,5 +1,5 @@
 
-package liqueurPlant.client.pipe;
+package liqueurPlant.client.commonRes;
 
 import java.io.File;
 import java.io.IOException;

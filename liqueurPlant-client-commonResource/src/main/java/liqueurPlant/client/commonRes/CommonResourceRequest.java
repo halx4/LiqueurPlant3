@@ -1,4 +1,4 @@
-package liqueurPlant.client.pipe;
+package liqueurPlant.client.commonRes;
 
 public class CommonResourceRequest {
 		private int requesterID;

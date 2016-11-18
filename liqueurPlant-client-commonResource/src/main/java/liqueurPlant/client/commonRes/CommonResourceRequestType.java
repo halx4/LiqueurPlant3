@@ -1,4 +1,4 @@
-package liqueurPlant.client.pipe;
+package liqueurPlant.client.commonRes;
 
  enum CommonResourceRequestType {
 	 	ACQUIRE,

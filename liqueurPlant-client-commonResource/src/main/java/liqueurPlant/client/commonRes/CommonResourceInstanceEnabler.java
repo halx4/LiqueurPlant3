@@ -1,4 +1,4 @@
-package liqueurPlant.client.pipe;
+package liqueurPlant.client.commonRes;
 
 import java.awt.Color;
 import java.awt.Font;
