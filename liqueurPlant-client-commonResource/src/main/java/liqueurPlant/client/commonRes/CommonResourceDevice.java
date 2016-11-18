@@ -31,6 +31,7 @@ public class CommonResourceDevice {
 	private String endpointName=null;
 	private MyInstanceEnablerFactory enablersFactory;
 	private List<ObjectEnabler> enablers;
+	CommonResourceController commonResourceController;
 
 	public static void main(String[] args) {
 		if (args.length == 0) {
@@ -71,7 +72,8 @@ public class CommonResourceDevice {
 		}
 
 		System.out.println("endpoint name = " + endpointName);
-
+		commonResourceController=new CommonResourceController(endpointName);
+		
 		initializeCustomObjects();
 
 		// Create client
@@ -116,38 +118,23 @@ public class CommonResourceDevice {
 		allObjectModelsList.addAll(defaultObjectModels);
 		allObjectModelsList.addAll(customObjectModels);
 
-		HashMap<Integer, ObjectModel> allObjectModels = new HashMap<Integer, ObjectModel>();
+	
 
-		Iterator<ObjectModel> allObjectModelsListIterator = allObjectModelsList.iterator();
-		while (allObjectModelsListIterator.hasNext()) {
-			ObjectModel tempObjModel = allObjectModelsListIterator.next();
-			if (isSupported(tempObjModel.id)) {
-				// System.out.println("ADDED->"+tempObjModel.id);
-				allObjectModels.put(tempObjModel.id, tempObjModel);
-
-			}
-		}
-
-		// System.out.println("allObjectModels.size= "+allObjectModels.size());
 		LwM2mModel lwM2mModel = new LwM2mModel(allObjectModelsList);
 
 		ObjectsInitializer initializer = new ObjectsInitializer(lwM2mModel);// lwM2mModel
 
-		initializer.setClassForObject(3, DeviceEnabler.class);
+		//initializer.setClassForObject(3, DeviceEnabler.class);
 
 		// List<ObjectEnabler> enablers = initializer.createMandatory();
 		enablers = initializer.create(0, 1, 3);
 
 		// ---------------16666------------
-		ObjectModel objectModel6666 = allObjectModels.get(16666);
-		CommonResourceInstanceEnabler commonResourceInstanceEnabler = new CommonResourceInstanceEnabler(endpointName);
-
-		// commonResourceInstanceEnabler.setObjectModel(objectModel6666);
-
-		HashMap<Integer, LwM2mInstanceEnabler> instances16666 = new HashMap<Integer, LwM2mInstanceEnabler>();
-		instances16666.put(0, commonResourceInstanceEnabler);
-		ObjectEnabler objectEnabler16666 = new ObjectEnabler(16666, objectModel6666, instances16666, enablersFactory);
-		enablers.add(objectEnabler16666);
+		CommonResourceInstanceEnabler commonResourceInstanceEnabler = new CommonResourceInstanceEnabler(commonResourceController);
+		commonResourceController.setCommonResourceEnabler(commonResourceInstanceEnabler);
+		initializer.setInstancesForObject(16666, commonResourceInstanceEnabler);
+		enablers.add(initializer.create(16666));
+		//--------------------------------
 	}
 
 	private boolean isSupported(int id) {
