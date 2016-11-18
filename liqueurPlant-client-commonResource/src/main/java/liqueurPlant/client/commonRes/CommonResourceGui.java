@@ -48,7 +48,7 @@ class CommonResourceGui extends Frame {
 
 		}
 	
-		void update(boolean isOwned,String ownerID, LinkedList<CommonResourceRequest> requestsList){
+		void update(boolean isOwned,String ownerID, LinkedList<Request> requestsList){
 			if(isOwned){//has owner
 				currentOwnerL.setBackground(hasOwnerColor);
 				currentOwnerL.setText("Owner ID: "+ownerID);

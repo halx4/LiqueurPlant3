@@ -1,6 +1,6 @@
 package liqueurPlant.client.commonRes;
 
-public class CommonResourceLock {
+public class Lock {
 		private final String NONE="-1";
 		private final String NOOWNERSTRING="NONE";
 		private String ownerID=NONE;

@@ -1,20 +1,20 @@
 package liqueurPlant.client.commonRes;
 
-public class CommonResourceRequest {
+public class Request {
 		private String requesterID;
-		private CommonResourceRequestType requestType;
+		private RequestType requestType;
 		
 		String requesterID() {
 			return requesterID;
 		}
 
-		CommonResourceRequestType type() {
+		RequestType type() {
 			return requestType;
 		}
 
 		
 
-		CommonResourceRequest(String requesterID,CommonResourceRequestType requestType) {
+		Request(String requesterID,RequestType requestType) {
 			super();
 			this.requesterID = requesterID;
 			this.requestType=requestType;

@@ -1,6 +1,6 @@
 package liqueurPlant.client.commonRes;
 
- enum CommonResourceRequestType {
+ enum RequestType {
 	 	ACQUIRE,
 	 	RELEASE
 }

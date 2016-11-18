@@ -7,10 +7,10 @@ import org.eclipse.leshan.core.response.ReadResponse;
 import liqueurPlant.client.core.ObserversUpdater;
 
 
-public class CommonResourceInstanceEnabler extends BaseInstanceEnabler implements ObserversUpdater{
+public class CommonResourceEnabler extends BaseInstanceEnabler implements ObserversUpdater{
 	   private CommonResourceController controller;
 	
-	   public CommonResourceInstanceEnabler(CommonResourceController controller) {
+	   public CommonResourceEnabler(CommonResourceController controller) {
 		   this.controller=controller;
 		}
 	   //---------------------------------------
@@ -30,7 +30,7 @@ public class CommonResourceInstanceEnabler extends BaseInstanceEnabler implement
 	        switch (resourceid) {
 	        case 1://acquire
 	        	if(params!=null){//TODO try catch parse string to int.
-	        		controller.requestReceived(new CommonResourceRequest(params, CommonResourceRequestType.ACQUIRE));
+	        		controller.requestReceived(new Request(params, RequestType.ACQUIRE));
 	        		return ExecuteResponse.success();
 	        	}
 	        	else {
@@ -41,7 +41,7 @@ public class CommonResourceInstanceEnabler extends BaseInstanceEnabler implement
 	        	
 	        case 2://release
 	        	if(params!=null){
-	        		controller.requestReceived(new CommonResourceRequest(params,CommonResourceRequestType.RELEASE));
+	        		controller.requestReceived(new Request(params,RequestType.RELEASE));
 	        		return ExecuteResponse.success();
 	        	}
 	        	else {

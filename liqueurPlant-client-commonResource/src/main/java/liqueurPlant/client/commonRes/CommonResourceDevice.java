@@ -130,7 +130,7 @@ public class CommonResourceDevice {
 		enablers = initializer.create(0, 1, 3);
 
 		// ---------------16666------------
-		CommonResourceInstanceEnabler commonResourceInstanceEnabler = new CommonResourceInstanceEnabler(commonResourceController);
+		CommonResourceEnabler commonResourceInstanceEnabler = new CommonResourceEnabler(commonResourceController);
 		commonResourceController.setCommonResourceEnabler(commonResourceInstanceEnabler);
 		initializer.setInstancesForObject(16666, commonResourceInstanceEnabler);
 		enablers.add(initializer.create(16666));

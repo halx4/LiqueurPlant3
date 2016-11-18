@@ -5,15 +5,15 @@ import java.util.LinkedList;
 import liqueurPlant.client.core.ObserversUpdater;
 
 public class CommonResourceController {
-	private CommonResourceLock lock;
-	private LinkedList<CommonResourceRequest> requestsList;
+	private Lock lock;
+	private LinkedList<Request> requestsList;
 	private CommonResourceGui commonResourceGui;
 	private ObserversUpdater commonResourceInstanceEnabler;
 	
 	public CommonResourceController(String endpointName) {
 		super();
-		lock = new CommonResourceLock();
-		requestsList = new LinkedList<CommonResourceRequest>();
+		lock = new Lock();
+		requestsList = new LinkedList<Request>();
 		commonResourceGui=new CommonResourceGui(endpointName);
 		
 		updateGui();
@@ -27,8 +27,8 @@ public class CommonResourceController {
 		return lock.getOwnerID();
 	}
 	
-	public synchronized void requestReceived(CommonResourceRequest request){
-		if(request.type()==CommonResourceRequestType.ACQUIRE){//type is ACQUIRE
+	public synchronized void requestReceived(Request request){
+		if(request.type()==RequestType.ACQUIRE){//type is ACQUIRE
 			addNewRequest(request);
 				
 		}
@@ -49,7 +49,7 @@ public class CommonResourceController {
 	/*
 	 * returns true if a new request was added on the requests list
 	 */
-	private boolean addNewRequest(CommonResourceRequest request) {
+	private boolean addNewRequest(Request request) {
 		requestsList.add(request);
 		if(!lock.isOwned()){
 			System.out.println("resource was not owned ->immediate acquire");
