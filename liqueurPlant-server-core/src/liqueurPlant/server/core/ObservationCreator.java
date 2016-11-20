@@ -22,8 +22,6 @@ public class ObservationCreator {
 	//------------------------------------
 	public boolean addObservationListener(String clientEndpoint,int objectID,int instanceID,int resourceID,ObservationListener listener){
 		Client client=getClientByIdentifier(clientEndpoint);
-		//LwM2mResponse response=server.send(client, new ObserveRequest(objectID,instanceID,resourceID));
-		//System.out.println("observer request:responseCode= "+response.getCode().toString()+"  responsePayload= "+LwM2mResourceParser.valueOf(response));
 		Set<Observation> clientObservations=server.getObservationRegistry().getObservations(client);
 		Iterator<Observation> iter=clientObservations.iterator();
 		

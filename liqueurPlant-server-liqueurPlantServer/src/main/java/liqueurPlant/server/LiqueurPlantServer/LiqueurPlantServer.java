@@ -31,8 +31,8 @@ public class LiqueurPlantServer {
 
 	private LeshanServer server;
 	private ObservationCreator observationCreator;
-	private Process1Monitor siloMon1;
-	private Process2Monitor siloMon2;
+	private Process1Monitor proc1Mon;
+	private Process2Monitor proc2Mon;
 
 	public static void main(String[] args) { //// args={serverIdentifier
 												//// serverIP serverPort }
@@ -153,8 +153,8 @@ public class LiqueurPlantServer {
 			Client pipe = server.getClientRegistry().get("PIPE-0");
 			Client power = server.getClientRegistry().get("POWER-0");
 
-			siloMon1 = new Process1Monitor(1, server, s1, s4, pipe, power);
-			siloMon2 = new Process2Monitor(2, server, s2, s3, pipe, power);
+			proc1Mon = new Process1Monitor(1, server, s1, s4, pipe, power);
+			proc2Mon = new Process2Monitor(2, server, s2, s3, pipe, power);
 
 			// silo1 state
 			// observationCreator.establishObservation ("SILO-1", 16663, 0, 0);
@@ -178,82 +178,82 @@ public class LiqueurPlantServer {
 
 			// silo1 filling complete
 			observationCreator.establishObservation("SILO-1", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-1", 16663, 0, 7, siloMon1);
+			observationCreator.addObservationListener("SILO-1", 16663, 0, 7, proc1Mon);
 
 			// silo1 emptying complete
 			observationCreator.establishObservation("SILO-1", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-1", 16663, 0, 8, siloMon1);
-
+			observationCreator.addObservationListener("SILO-1", 16663, 0, 8, proc1Mon);
+			
 			// silo4 filling complete
 			observationCreator.establishObservation("SILO-4", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 7, siloMon1);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 7, proc1Mon);
 
 			// silo4 emptying complete
 			observationCreator.establishObservation("SILO-4", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 8, siloMon1);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 8, proc1Mon);
 
 			// silo4 heating complete
 			observationCreator.establishObservation("SILO-4", 16663, 0, 9);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 9, siloMon1);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 9, proc1Mon);
 
 			// silo4 mixing complete
 			observationCreator.establishObservation("SILO-4", 16663, 0, 10);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 10, siloMon1);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 10, proc1Mon);
 
 			// silo2 filling complete
 			observationCreator.establishObservation("SILO-2", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-2", 16663, 0, 7, siloMon2);
+			observationCreator.addObservationListener("SILO-2", 16663, 0, 7, proc2Mon);
 
 			// silo2 emptying complete
 			observationCreator.establishObservation("SILO-2", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-2", 16663, 0, 8, siloMon2);
+			observationCreator.addObservationListener("SILO-2", 16663, 0, 8, proc2Mon);
 
 			// silo3 filling complete
 			observationCreator.establishObservation("SILO-3", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-3", 16663, 0, 7, siloMon2);
+			observationCreator.addObservationListener("SILO-3", 16663, 0, 7, proc2Mon);
 
 			// silo3 emptying complete
 			observationCreator.establishObservation("SILO-3", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-3", 16663, 0, 8, siloMon2);
+			observationCreator.addObservationListener("SILO-3", 16663, 0, 8, proc2Mon);
 
 			// silo2 heating complete
 			observationCreator.establishObservation("SILO-2", 16663, 0, 9);
-			observationCreator.addObservationListener("SILO-2", 16663, 0, 9, siloMon2);
+			observationCreator.addObservationListener("SILO-2", 16663, 0, 9, proc2Mon);
 
 			// silo3 mixing complete
 			observationCreator.establishObservation("SILO-3", 16663, 0, 10);
-			observationCreator.addObservationListener("SILO-3", 16663, 0, 10, siloMon2);
+			observationCreator.addObservationListener("SILO-3", 16663, 0, 10, proc2Mon);
 
 			// pipe owner
 			observationCreator.establishObservation("PIPE-0", 16666, 0, 0);
-			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, siloMon1);
-			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, siloMon2);
+			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, proc1Mon);
+			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, proc2Mon);
 
 			// power owner
 			observationCreator.establishObservation("POWER-0", 16666, 0, 0);
-			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, siloMon1);
-			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, siloMon2);
+			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, proc1Mon);
+			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, proc2Mon);
 
 			// silo 3 mixer
 			observationCreator.establishObservation("SILO-3", 16667, 0, 5850);
-			observationCreator.addObservationListener("SILO-3", 16667, 0, 5850, siloMon2);
+			observationCreator.addObservationListener("SILO-3", 16667, 0, 5850, proc2Mon);
 
 			// silo 2 heater
 			observationCreator.establishObservation("SILO-2", 16668, 0, 5850);
-			observationCreator.addObservationListener("SILO-2", 16668, 0, 5850, siloMon2);
+			observationCreator.addObservationListener("SILO-2", 16668, 0, 5850, proc2Mon);
 
 			// silo 4 mixer
 			observationCreator.establishObservation("SILO-4", 16667, 0, 5850);
-			observationCreator.addObservationListener("SILO-4", 16667, 0, 5850, siloMon1);
+			observationCreator.addObservationListener("SILO-4", 16667, 0, 5850, proc1Mon);
 
 			// silo 4 heater
 			observationCreator.establishObservation("SILO-4", 16668, 0, 5850);
-			observationCreator.addObservationListener("SILO-4", 16668, 0, 5850, siloMon1);
+			observationCreator.addObservationListener("SILO-4", 16668, 0, 5850, proc1Mon);
 
 			break;
 		case "start processes":
-			LiqueurGenerationProcess1 p1 = new LiqueurGenerationProcess1(1, siloMon1);
-			LiqueurGenerationProcess2 p2 = new LiqueurGenerationProcess2(2, siloMon2);
+			LiqueurGenerationProcess1 p1 = new LiqueurGenerationProcess1(1, proc1Mon);
+			LiqueurGenerationProcess2 p2 = new LiqueurGenerationProcess2(2, proc2Mon);
 			p1.start();
 			p2.start();
 			// System.out.println("processes started");
