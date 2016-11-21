@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.1.11" icons="true" automaticImage="PNG" always-add-relationships="false" 
-  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
-  router="FAN">  
+<class-diagram version="1.1.8" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="liqueurPlant.server.core.CustomModelProvider" project="liqueurPlant-server-core" 
     file="/liqueurPlant-server-core/src/liqueurPlant/server/core/CustomModelProvider.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -38,7 +37,7 @@
     project="liqueurPlant-server-liqueurPlantServer" 
     file="/liqueurPlant-server-liqueurPlantServer/src/main/java/liqueurPlant/server/LiqueurPlantServer/LiqueurPlantServer.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="553" y="604"/>    
+    <position height="-1" width="-1" x="537" y="620"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -88,11 +87,15 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="11">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="12" name="objects"/>      
-      <multiplicity id="13" minimum="0" maximum="2147483647"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="12" name="lwM2mModel">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="14">    
@@ -108,25 +111,29 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <dependency id="17">    
-    <bendpoint x="266" y="326"/>    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="18">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </dependency>  
-  <association id="19">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="20" name="lwM2mModel"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
+  <association id="18">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="19" name="objects">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="22">    
+  <dependency id="21">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="22">    
+    <bendpoint x="266" y="326"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
   </dependency>  
   <realization id="23">    
     <end type="SOURCE" refId="1"/>    
