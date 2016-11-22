@@ -54,7 +54,7 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 					System.out.println("P"+id+" MARK 4");
 					
 					//make the new thread
-					subprocess=new SubProcess(getProcessID());
+					subprocess=new SubProcess();
 					subprocess.start();
 						System.out.println("P"+id+" MARK 5");
 						monitor.waitForPower(id);
@@ -76,7 +76,6 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 					try {
 						subprocess.join();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
@@ -89,12 +88,12 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	
 	}//end run
 		
-	class SubProcess extends LiqueurProcessThread{
+	class SubProcess extends Thread{
 
 		
-		SubProcess(int processID) {
+		SubProcess() {
 			
-			super(processID);
+			//super(processID);
 			System.out.println("SUBPROCESS CREATED");
 		}
 		
