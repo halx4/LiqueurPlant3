@@ -38,7 +38,7 @@
     project="liqueurPlant-server-liqueurPlantServer" 
     file="/liqueurPlant-server-liqueurPlantServer/src/main/java/liqueurPlant/server/LiqueurPlantServer/Processes/LiqueurGenerationProcess1.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="170" y="557"/>    
+    <position height="-1" width="-1" x="171" y="475"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -50,7 +50,7 @@
     project="liqueurPlant-server-liqueurPlantServer" 
     file="/liqueurPlant-server-liqueurPlantServer/src/main/java/liqueurPlant/server/LiqueurPlantServer/Processes/LiqueurGenerationProcess2.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="641" y="789"/>    
+    <position height="-1" width="-1" x="642" y="707"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -61,7 +61,7 @@
     project="liqueurPlant-server-liqueurPlantServer" 
     file="/liqueurPlant-server-liqueurPlantServer/src/main/java/liqueurPlant/server/LiqueurPlantServer/Processes/LiqueurGenerationProcess2.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="603" y="549"/>    
+    <position height="-1" width="-1" x="605" y="475"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -72,7 +72,7 @@
     project="liqueurPlant-server-liqueurPlantServer" 
     file="/liqueurPlant-server-liqueurPlantServer/src/main/java/liqueurPlant/server/LiqueurPlantServer/Processes/LiqueurProcessThread.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="392" y="681"/>    
+    <position height="-1" width="-1" x="393" y="599"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -81,7 +81,7 @@
   </class>  
   <class id="8" language="java" name="java.lang.Thread" project="liqueurPlant-server-liqueurPlantServer" 
     file="C:/Program Files/Java/jdk1.8.0_66/jre/lib/rt.jar" binary="true" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="395" y="789"/>    
+    <position height="-1" width="-1" x="396" y="707"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -121,7 +121,7 @@
   <association id="15">    
     <end type="SOURCE" refId="6" navigable="false">      
       <attribute id="16" name="subprocess">        
-        <position height="18" width="66" x="618" y="705"/>      
+        <position height="18" width="66" x="619" y="623"/>      
       </attribute>      
       <multiplicity id="17" minimum="0" maximum="1"/>    
     </end>    
