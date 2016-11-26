@@ -47,8 +47,7 @@ public class LiqueurGenerationProcess1 extends LiqueurProcessThread {
 					monitor.initializeMix();
 					monitor.waitForSiloOutMixingCompleted();
 					
-					monitor.sendReleasePower(id);
-													
+					monitor.sendReleasePower(id);									
 			}
 		}
 		catch(InterruptedException e){
