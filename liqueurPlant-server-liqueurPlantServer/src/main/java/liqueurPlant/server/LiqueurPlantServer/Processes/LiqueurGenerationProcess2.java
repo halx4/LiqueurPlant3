@@ -4,7 +4,7 @@ import liqueurPlant.server.LiqueurPlantServer.monitors.Process2Monitor;
 
 public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	private Process2Monitor monitor;
-	
+	private boolean continueProduction=true;
 	private SecondaryThread secondaryThread;
 
 	public LiqueurGenerationProcess2(int processID,Process2Monitor monitor) {
@@ -28,7 +28,7 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 			
 			monitor.waitForSiloOutEmptyingCompleted();
 			
-			while(true){
+			while(continueProduction){
 					monitor.sendAcquirePipe(id);
 					monitor.waitForPipe(id);
 					
