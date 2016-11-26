@@ -31,8 +31,8 @@ public class LiqueurPlantServer {
 
 	private LeshanServer server;
 	private ObservationCreator observationCreator;
-	private Process1Monitor proc1Mon;
-	private Process2Monitor proc2Mon;
+	private Process1Monitor process1Monitor;
+	private Process2Monitor process2Monitor;
 
 	public static void main(String[] args) { //// args={serverIdentifier
 												//// serverIP serverPort }
@@ -153,8 +153,8 @@ public class LiqueurPlantServer {
 			Client pipe = server.getClientRegistry().get("PIPE-0");
 			Client power = server.getClientRegistry().get("POWER-0");
 
-			proc1Mon = new Process1Monitor(1, server, s1, s4, pipe, power);
-			proc2Mon = new Process2Monitor(2, server, s2, s3, pipe, power);
+			process1Monitor = new Process1Monitor(1, server, s1, s4, pipe, power);
+			process2Monitor = new Process2Monitor(2, server, s2, s3, pipe, power);
 
 			// silo1 state
 			// observationCreator.establishObservation ("SILO-1", 16663, 0, 0);
@@ -176,84 +176,84 @@ public class LiqueurPlantServer {
 			// observationCreator.addObservationListener ("SILO-4", 16663, 0, 0,
 			// siloMon1);
 
-			// silo1 filling complete
+			// silo1 filling completed
 			observationCreator.establishObservation("SILO-1", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-1", 16663, 0, 7, proc1Mon);
+			observationCreator.addObservationListener("SILO-1", 16663, 0, 7, process1Monitor);
 
-			// silo1 emptying complete
+			// silo1 emptying completed
 			observationCreator.establishObservation("SILO-1", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-1", 16663, 0, 8, proc1Mon);
+			observationCreator.addObservationListener("SILO-1", 16663, 0, 8, process1Monitor);
 			
-			// silo4 filling complete
+			// silo4 filling completed
 			observationCreator.establishObservation("SILO-4", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 7, proc1Mon);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 7, process1Monitor);
 
-			// silo4 emptying complete
+			// silo4 emptying completed
 			observationCreator.establishObservation("SILO-4", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 8, proc1Mon);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 8, process1Monitor);
 
-			// silo4 heating complete
+			// silo4 heating completed
 			observationCreator.establishObservation("SILO-4", 16663, 0, 9);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 9, proc1Mon);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 9, process1Monitor);
 
-			// silo4 mixing complete
+			// silo4 mixing completed
 			observationCreator.establishObservation("SILO-4", 16663, 0, 10);
-			observationCreator.addObservationListener("SILO-4", 16663, 0, 10, proc1Mon);
+			observationCreator.addObservationListener("SILO-4", 16663, 0, 10, process1Monitor);
 
-			// silo2 filling complete
+			// silo2 filling completed
 			observationCreator.establishObservation("SILO-2", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-2", 16663, 0, 7, proc2Mon);
+			observationCreator.addObservationListener("SILO-2", 16663, 0, 7, process2Monitor);
 
-			// silo2 emptying complete
+			// silo2 emptying completed
 			observationCreator.establishObservation("SILO-2", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-2", 16663, 0, 8, proc2Mon);
+			observationCreator.addObservationListener("SILO-2", 16663, 0, 8, process2Monitor);
 
-			// silo3 filling complete
+			// silo3 filling completed
 			observationCreator.establishObservation("SILO-3", 16663, 0, 7);
-			observationCreator.addObservationListener("SILO-3", 16663, 0, 7, proc2Mon);
+			observationCreator.addObservationListener("SILO-3", 16663, 0, 7, process2Monitor);
 
-			// silo3 emptying complete
+			// silo3 emptying completed
 			observationCreator.establishObservation("SILO-3", 16663, 0, 8);
-			observationCreator.addObservationListener("SILO-3", 16663, 0, 8, proc2Mon);
+			observationCreator.addObservationListener("SILO-3", 16663, 0, 8, process2Monitor);
 
-			// silo2 heating complete
+			// silo2 heating completed
 			observationCreator.establishObservation("SILO-2", 16663, 0, 9);
-			observationCreator.addObservationListener("SILO-2", 16663, 0, 9, proc2Mon);
+			observationCreator.addObservationListener("SILO-2", 16663, 0, 9, process2Monitor);
 
-			// silo3 mixing complete
+			// silo3 mixing completed
 			observationCreator.establishObservation("SILO-3", 16663, 0, 10);
-			observationCreator.addObservationListener("SILO-3", 16663, 0, 10, proc2Mon);
+			observationCreator.addObservationListener("SILO-3", 16663, 0, 10, process2Monitor);
 
 			// pipe owner
 			observationCreator.establishObservation("PIPE-0", 16666, 0, 0);
-			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, proc1Mon);
-			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, proc2Mon);
+			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, process1Monitor);
+			observationCreator.addObservationListener("PIPE-0", 16666, 0, 0, process2Monitor);
 
 			// power owner
 			observationCreator.establishObservation("POWER-0", 16666, 0, 0);
-			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, proc1Mon);
-			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, proc2Mon);
+			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, process1Monitor);
+			observationCreator.addObservationListener("POWER-0", 16666, 0, 0, process2Monitor);
 
 			// silo 3 mixer
 			observationCreator.establishObservation("SILO-3", 16667, 0, 5850);
-			observationCreator.addObservationListener("SILO-3", 16667, 0, 5850, proc2Mon);
+			observationCreator.addObservationListener("SILO-3", 16667, 0, 5850, process2Monitor);
 
 			// silo 2 heater
 			observationCreator.establishObservation("SILO-2", 16668, 0, 5850);
-			observationCreator.addObservationListener("SILO-2", 16668, 0, 5850, proc2Mon);
+			observationCreator.addObservationListener("SILO-2", 16668, 0, 5850, process2Monitor);
 
 			// silo 4 mixer
 			observationCreator.establishObservation("SILO-4", 16667, 0, 5850);
-			observationCreator.addObservationListener("SILO-4", 16667, 0, 5850, proc1Mon);
+			observationCreator.addObservationListener("SILO-4", 16667, 0, 5850, process1Monitor);
 
 			// silo 4 heater
 			observationCreator.establishObservation("SILO-4", 16668, 0, 5850);
-			observationCreator.addObservationListener("SILO-4", 16668, 0, 5850, proc1Mon);
+			observationCreator.addObservationListener("SILO-4", 16668, 0, 5850, process1Monitor);
 
 			break;
 		case "start processes":
-			LiqueurGenerationProcess1 p1 = new LiqueurGenerationProcess1(1, proc1Mon);
-			LiqueurGenerationProcess2 p2 = new LiqueurGenerationProcess2(2, proc2Mon);
+			LiqueurGenerationProcess1 p1 = new LiqueurGenerationProcess1(1, process1Monitor);
+			LiqueurGenerationProcess2 p2 = new LiqueurGenerationProcess2(2, process2Monitor);
 			p1.start();
 			p2.start();
 			// System.out.println("processes started");

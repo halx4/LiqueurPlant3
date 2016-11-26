@@ -16,34 +16,26 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	@Override
 	public void run(){
 		String id=Integer.toString( getProcessID());
-		System.out.println("starting LiqueurProcess1. processID= "+getProcessID());
+
 		try{
 			monitor.sendSiloInFill();
 			monitor.sendSiloOutEmpty();
-			//monitor.waitForSiloInState(SmartSiloState.FULL);
 			monitor.waitForSiloInFillingCompleted();
 			
 			monitor.sendSiloInHeat();
 			monitor.initializeHeat();
-			//monitor.waitForHeat();
 			monitor.waitForSiloInHeatingCompleted();
 			
-			//monitor.waitForSiloOutState(SmartSiloState.EMPTY);
 			monitor.waitForSiloOutEmptyingCompleted();
 			
 			while(true){
-					System.out.println("P"+id+" MARK 1");
 					monitor.sendAcquirePipe(id);
-					System.out.println("P"+id+" MARK 2");
 					monitor.waitForPipe(id);
 					
 					monitor.initializeTransfer();
 					monitor.sendSiloInEmpty();
 					monitor.sendSiloOutFill();
-					System.out.println("P"+id+" MARK 3");
 					monitor.waitForLiqueurTransfer();
-					
-					
 					
 					monitor.sendSiloInStop();
 					monitor.sendSiloOutStop();
@@ -51,27 +43,21 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 					
 					monitor.sendSiloInFill();
 					monitor.sendAcquirePower(id);
-					System.out.println("P"+id+" MARK 4");
 					
-					//make the new thread
 					subprocess=new SubProcess();
 					subprocess.start();
-						System.out.println("P"+id+" MARK 5");
-						monitor.waitForPower(id);
 						
-						monitor.sendSiloOutMix();
-						monitor.initializeMix();
-						System.out.println("P"+id+" MARK 6");
+					monitor.waitForPower(id);
 						
-						//monitor.waitForMix();
-						monitor.waitForSiloOutMixingCompleted();
+					monitor.sendSiloOutMix();
+					monitor.initializeMix();
+					
+					monitor.waitForSiloOutMixingCompleted();
 						
-						monitor.sendReleasePower(id);
-						monitor.sendSiloOutEmpty();
-						System.out.println("P"+id+" MARK 7");
+					monitor.sendReleasePower(id);
+					monitor.sendSiloOutEmpty();
 						
-						//monitor.waitForSiloOutState(SmartSiloState.EMPTY);
-						monitor.waitForSiloOutEmptyingCompleted();
+					monitor.waitForSiloOutEmptyingCompleted();
 					
 					try {
 						subprocess.join();
@@ -91,28 +77,20 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	class SubProcess extends Thread{
 
 		
-		SubProcess() {
-			
-			//super(processID);
-			System.out.println("SUBPROCESS CREATED");
-		}
+		SubProcess() {}
 		
 		@Override
 		public void run(){
-			System.out.println("SUBPROCESS STARTED");
 			try{	
-				//monitor.waitForSiloInState(SmartSiloState.FULL);
 				monitor.waitForSiloInFillingCompleted();
 				
 				monitor.initializeHeat();
 				monitor.sendSiloInHeat();
-				//monitor.waitForHeat();
 				monitor.waitForSiloInHeatingCompleted();
 			}
 			catch(InterruptedException e){
 				e.printStackTrace();
 			}
-			//die
 			
 			
 		}
