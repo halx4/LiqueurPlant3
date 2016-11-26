@@ -5,7 +5,7 @@ import liqueurPlant.server.LiqueurPlantServer.monitors.Process2Monitor;
 public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	private Process2Monitor monitor;
 	
-	private SubProcess subprocess;
+	private SecondaryThread secondaryThread;
 
 	public LiqueurGenerationProcess2(int processID,Process2Monitor monitor) {
 		super(processID);
@@ -44,8 +44,8 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 					monitor.sendSiloInFill();
 					monitor.sendAcquirePower(id);
 					
-					subprocess=new SubProcess();
-					subprocess.start();
+					secondaryThread=new SecondaryThread();
+					secondaryThread.start();
 						
 					monitor.waitForPower(id);
 						
@@ -60,7 +60,7 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 					monitor.waitForSiloOutEmptyingCompleted();
 					
 					try {
-						subprocess.join();
+						secondaryThread.join();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -74,10 +74,10 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 	
 	}//end run
 		
-	class SubProcess extends Thread{
+	class SecondaryThread extends Thread{
 
 		
-		SubProcess() {}
+		SecondaryThread() {}
 		
 		@Override
 		public void run(){
@@ -96,10 +96,5 @@ public class LiqueurGenerationProcess2 extends LiqueurProcessThread {
 		}
 		
 	}	
-		
-		
-		
-		
-	
-	
+			
 }
