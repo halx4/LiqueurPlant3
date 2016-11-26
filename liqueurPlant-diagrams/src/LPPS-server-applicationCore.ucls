@@ -82,7 +82,7 @@
   </class>  
   <class id="8" language="java" name="java.lang.Thread" project="liqueurPlant-server-liqueurPlantServer" 
     file="C:/Program Files/Java/jre1.8.0_111/lib/rt.jar" binary="true" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="396" y="707"/>    
+    <position height="-1" width="-1" x="395" y="707"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
