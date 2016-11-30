@@ -24,9 +24,7 @@ public class SiloSimulatorTester extends Frame implements SiloControllerInterfac
 	private Label observeLabel;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		SiloSimulatorTester tester= new SiloSimulatorTester();
-		
 	}
 	
 	

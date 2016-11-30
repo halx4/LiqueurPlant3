@@ -27,7 +27,7 @@ public class SiloSimulatorDriver implements SiloDriverInterface {
 	
 	private SiloSimulatorGui gui; 
 	
-	private final float defaultTemperature=25.0f;
+	private final float ROOMTEMPERATURE=25.0f;
 	private int time2Heat1Degree=500;//in ms. TODO should be made parameter (is in ms)
 								
 	//----------------------------------------
@@ -226,13 +226,13 @@ public class SiloSimulatorDriver implements SiloDriverInterface {
 	}
 	//####################################
 	class HeatingSimulator{
-		private float currentTemperature=defaultTemperature;
+		private float currentTemperature=ROOMTEMPERATURE;
 		
 		void increase(){
 			currentTemperature+=1.0;
 		}
 		void setDefaultTemperature(){
-			currentTemperature=defaultTemperature;
+			currentTemperature=ROOMTEMPERATURE;
 		}
 		float getCurrentTemperature(){
 			return currentTemperature;
