@@ -39,8 +39,8 @@ public class SiloSimulatorDriver implements SiloDriverInterface {
 		prevLowLevelSensorOutput=getLowLevelSensorOutput();
 		prevHighLevelSensorOutput=getHighLevelSensorOutput();
 		
-		inValveState=ValveState.state.CLOSED;//TODO make correct initilization?
-		outValveState=ValveState.state.CLOSED; //TODO make correct initilization?
+		inValveState=ValveState.state.CLOSED;//TODO do correct initilization?
+		outValveState=ValveState.state.CLOSED; //TODO do correct initilization?
 		
 		heaterState=HeaterState.state.NOTHEATING;
 		
@@ -162,7 +162,7 @@ public class SiloSimulatorDriver implements SiloDriverInterface {
 		
 		//System.out.println("heaterTimerEvent-------------------~~~~!!!!");
 		if(inValveState==ValveState.state.CLOSED && outValveState==ValveState.state.CLOSED && heaterState==HeaterState.state.HEATING){
-			heatingSimulator.increase();
+			heatingSimulator.increaseTemperature1degree();
 			gui.setTemperature(heatingSimulator.getCurrentTemperature());
 
 		}
@@ -228,7 +228,7 @@ public class SiloSimulatorDriver implements SiloDriverInterface {
 	class HeatingSimulator{
 		private float currentTemperature=ROOMTEMPERATURE;
 		
-		void increase(){
+		void increaseTemperature1degree(){
 			currentTemperature+=1.0;
 		}
 		void setDefaultTemperature(){
