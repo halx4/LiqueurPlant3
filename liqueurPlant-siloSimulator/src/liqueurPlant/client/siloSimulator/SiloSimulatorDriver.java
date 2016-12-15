@@ -90,14 +90,18 @@ public class SiloSimulatorDriver implements SiloDriverInterface {
 	//----------------------------------------
 	@Override
 	public synchronized LevelSensorOutputState.state getHighLevelSensorOutput(){  
-		if(level.getLevel()>=siloParams.getHighLevelSensorHeight())return LevelSensorOutputState.state.LIQUIDDETECTED;
-		else return LevelSensorOutputState.state.LIQUIDNOTDETECTED;
+		if(level.getLevel()>=siloParams.getHighLevelSensorHeight())
+			return LevelSensorOutputState.state.LIQUIDDETECTED;
+		else 
+			return LevelSensorOutputState.state.LIQUIDNOTDETECTED;
 	}
 	//----------------------------------------
 	@Override
 	public synchronized LevelSensorOutputState.state getLowLevelSensorOutput(){  
-		if(level.getLevel()>=siloParams.getLowLevelSensorHeight())return LevelSensorOutputState.state.LIQUIDDETECTED;
-		else return LevelSensorOutputState.state.LIQUIDNOTDETECTED;
+		if(level.getLevel()>=siloParams.getLowLevelSensorHeight())
+			return LevelSensorOutputState.state.LIQUIDDETECTED;
+		else 
+			return LevelSensorOutputState.state.LIQUIDNOTDETECTED;
 		
 	}
 	//----------------------------------------
