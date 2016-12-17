@@ -5,18 +5,18 @@
     project="liqueurPlant-client-siloDriver-hardware" 
     file="/liqueurPlant-client-siloDriver-hardware/src/liqueurPlant/client/siloDriverHardware/SiloHardwareDriver.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="531" width="224" x="193" y="-74"/>    
+    <position height="-1" width="-1" x="239" y="312"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="true" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="2" language="java" name="liqueurPlant.client.siloDriverHardware.SiloHardwareDriver.SerialListener" 
     project="liqueurPlant-client-siloDriver-hardware" 
     file="/liqueurPlant-client-siloDriver-hardware/src/liqueurPlant/client/siloDriverHardware/SiloHardwareDriver.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="199" x="73" y="497"/>    
+    <position height="-1" width="-1" x="-9" y="527"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -27,7 +27,7 @@
     project="liqueurPlant-client-siloDriver-hardware" 
     file="/liqueurPlant-client-siloDriver-hardware/src/liqueurPlant/client/siloDriverHardware/SiloHardwareDriver.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="245" x="293" y="500"/>    
+    <position height="99" width="245" x="112" y="481"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -36,34 +36,34 @@
   </class>  
   <interface id="4" language="java" name="liqueurPlant.core.SiloDriverInterface" project="liqueurPlant-core" 
     file="/liqueurPlant-core/src/liqueurPlant/core/SiloDriverInterface.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-11" y="115"/>    
+    <position height="-1" width="-1" x="-24" y="280"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
   <interface id="5" language="java" name="com.pi4j.io.gpio.GpioPinDigitalInput" project="pi4j-core" 
     file="/pi4j-core/src/main/java/com/pi4j/io/gpio/GpioPinDigitalInput.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="644" y="159"/>    
+    <position height="-1" width="-1" x="229" y="78"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
   <interface id="6" language="java" name="liqueurPlant.core.SiloControllerInterface" project="liqueurPlant-core" 
     file="/liqueurPlant-core/src/liqueurPlant/core/SiloControllerInterface.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-20" y="304"/>    
+    <position height="-1" width="-1" x="-22" y="380"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
   <interface id="7" language="java" name="com.pi4j.io.serial.SerialDataEventListener" project="pi4j-core" 
     file="/pi4j-core/src/main/java/com/pi4j/io/serial/SerialDataEventListener.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="175" y="692"/>    
+    <position height="-1" width="-1" x="-8" y="659"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
@@ -73,137 +73,95 @@
   <interface id="8" language="java" name="com.pi4j.io.gpio.event.GpioPinListenerDigital" project="pi4j-core" 
     file="/pi4j-core/src/main/java/com/pi4j/io/gpio/event/GpioPinListenerDigital.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="81" width="248" x="295" y="656"/>    
+    <position height="81" width="248" x="114" y="622"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="false" package="false" protected="false" private="false" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="9" language="java" name="com.pi4j.io.serial.Serial" project="pi4j-core" 
-    file="/pi4j-core/src/main/java/com/pi4j/io/serial/Serial.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="166" width="201" x="545" y="-91"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <interface id="10" language="java" name="com.pi4j.io.gpio.GpioPinDigitalOutput" project="pi4j-core" 
+  <interface id="9" language="java" name="com.pi4j.io.gpio.GpioPinDigitalOutput" project="pi4j-core" 
     file="/pi4j-core/src/main/java/com/pi4j/io/gpio/GpioPinDigitalOutput.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="179" width="203" x="533" y="252"/>    
+    <position height="179" width="171" x="-78" y="47"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <association id="11">    
+  <association id="10">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="12" name="serialListener">        
-        <position height="18" width="73" x="102" y="476"/>      
+      <attribute id="11" name="serialListener">        
+        <position height="18" width="73" x="-37" y="458"/>      
       </attribute>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="14">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="4"/>  
-  </realization>  
-  <association id="15">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="16" name="serial"/>      
-      <multiplicity id="17" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="18">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="19" name="lowLevelSensorPin"/>      
-      <multiplicity id="20" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="21">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="22" name="controller"/>      
-      <multiplicity id="23" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="24">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <association id="25">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="26" name="gpioListener">        
-        <position height="18" width="67" x="300" y="477"/>      
-      </attribute>      
-      <multiplicity id="27" minimum="0" maximum="1">        
-        <position height="16" width="23" x="403" y="479"/>      
+      <multiplicity id="12" minimum="0" maximum="1">        
+        <position height="16" width="23" x="15" y="449"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="28">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="29" name="mixerPin"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="31">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
-  <nesting id="32">    
+  <nesting id="13">    
+    <bendpoint x="70" y="431"/>    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="2"/>  
   </nesting>  
-  <association id="33">    
+  <association id="14">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="34" name="inValvePin"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+      <attribute id="15" name="inValvePin"/>      
+      <multiplicity id="16" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="false" multiplicity="false"/>  
   </association>  
-  <association id="36">    
+  <realization id="17">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <association id="18">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="37" name="highLevelSensorPin"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
+      <attribute id="19" name="highLevelSensorPin">        
+        <position height="18" width="103" x="79" y="146"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
+    <display labels="false" multiplicity="false"/>  
   </association>  
-  <realization id="39">    
+  <realization id="21">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
-  <association id="40">    
+  <association id="22">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="41" name="heaterPin"/>      
-      <multiplicity id="42" minimum="0" maximum="1"/>    
+      <attribute id="23" name="controller">        
+        <position height="18" width="53" x="40" y="334"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
   </association>  
-  <association id="43">    
+  <realization id="25">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="26">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="44" name="outValvePin"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
+      <attribute id="27" name="gpioListener">        
+        <position height="18" width="67" x="141" y="459"/>      
+      </attribute>      
+      <multiplicity id="28" minimum="0" maximum="1">        
+        <position height="16" width="23" x="187" y="465"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="false"/>  
   </association>  
+  <nesting id="29">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
